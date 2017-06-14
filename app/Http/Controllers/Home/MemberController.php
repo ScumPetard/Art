@@ -29,7 +29,7 @@ class MemberController extends Controller
      */
     public function sign(Request $request)
     {
-        try {
+//        try {
 
             /** Get 请求 */
             if ($request->isMethod('get')) {
@@ -152,9 +152,9 @@ class MemberController extends Controller
             }
 
 
-        } catch (\Exception $exception) {
-            return view('errors.404');
-        }
+//        } catch (\Exception $exception) {
+//            return view('errors.404');
+//        }
     }
 
     /**
