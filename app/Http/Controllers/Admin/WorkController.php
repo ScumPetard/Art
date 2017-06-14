@@ -216,6 +216,7 @@ class WorkController extends Controller
         /** create Work */
         $workResult = Work::create([
             'file_name' => $work_name,
+            'work_name' => $work_name,
             'big_image' => '/' . $big_image_path,
             'small_image' => '/' . $small_image_path,
             'is_complete' => 0,

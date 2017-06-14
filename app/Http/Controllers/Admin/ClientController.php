@@ -38,7 +38,7 @@ class ClientController extends Controller
     public function create(Request $request)
     {
         
-//        try {
+        try {
             if (Client::checkAccountUnique($request->get('account'))) {
                 throw new \Exception('此账户已存在!');
             }
@@ -102,9 +102,9 @@ class ClientController extends Controller
                 }
             }
             return Tools::notifyTo('创建成功');
-//        } catch (\Exception $exception) {
-//            return Tools::notifyTo($exception->getMessage());
-//        }
+        } catch (\Exception $exception) {
+            return Tools::notifyTo($exception->getMessage());
+        }
 
     }
 
