@@ -29,7 +29,7 @@ class MustOnRealIp
                 $endTime = strtotime($ip->client->end_ip);
 
                 if(
-                    Tools::check($ip->ip,'192.168.0.255')
+                    Tools::check($ip->ip,$request->getClientIp())
                     && ($startTime < time() && time() < $endTime)
                 ) {
                     Session::put('clientRealIp', $ip->ip);
