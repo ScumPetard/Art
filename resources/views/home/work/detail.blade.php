@@ -30,7 +30,7 @@
                     <li>作品类型：<span>{{$work->worktype->name}}</span></li>
                     <li>创作地点：<span>{{$work->creating_location}}</span></li>
                     <li>收藏机构： <span>{{$work->collection_location}}</span></li>
-                    <li>艺术时期： <span>{{$work->author->art_date}}</span></li>
+                    <li>艺术时期： <span>{{ isset($work->author) ? $work->author->art_date : ''}}</span></li>
                     @if(Session::has('member') || Session::has('client'))
                         <li>下载图片： <span><a href="/api/down/big-image/{{$work->id}}" target="_blank" style="color: inherit">高清图</a></span>
                         </li>

@@ -49,6 +49,7 @@
                     <li><a href="/admin/indexpictures"><i class="fa fa-circle-o"></i> 首页信息设置</a></li>
                     <li><a href="/admin/module"><i class="fa fa-circle-o"></i> 模块设置</a></li>
                     <li><a href="/admin/statistical"><i class="fa fa-circle-o"></i> 访问统计设置</a></li>
+                    <li><a href="{{ route('admin.statistical.custom') }}"><i class="fa fa-circle-o"></i> 自定义访问数量</a></li>
                     <li><a href="/admin/problem"><i class="fa fa-circle-o"></i> 问题反馈设置</a></li>
                 </ul>
             </li>

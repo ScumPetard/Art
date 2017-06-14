@@ -72,4 +72,13 @@ class StatisticalController extends Controller
         )->with('huizong',$huizong)->with('clients',Client::all());
 
     }
+
+    public function custom(Request $request)
+    {
+        if ($request->isMethod('get')) 
+        {
+            return view('admin.statistical.custom')->with('modules',Module::all());
+        }
+        dd($request->all());
+    }
 }

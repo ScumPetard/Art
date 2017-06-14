@@ -233,6 +233,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
         /** 统计 */
         Route::any('/statistical','StatisticalController@index')->name('admin.statistical.index');
         Route::post('/statistical/seach','StatisticalController@seach')->name('admin.statistical.seach');
+        Route::any('/custom','StatisticalController@custom')->name('admin.statistical.custom');
 
         /** 首页信息 */
         Route::any('/indexpictures','IndexPicturesController@index')->name('admin.indexpictures.show');

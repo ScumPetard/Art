@@ -38,7 +38,7 @@ class ClientController extends Controller
     public function create(Request $request)
     {
         
-        try {
+//        try {
             if (Client::checkAccountUnique($request->get('account'))) {
                 throw new \Exception('此账户已存在!');
             }
@@ -102,9 +102,9 @@ class ClientController extends Controller
                 }
             }
             return Tools::notifyTo('创建成功');
-        } catch (\Exception $exception) {
-            return Tools::notifyTo($exception->getMessage());
-        }
+//        } catch (\Exception $exception) {
+//            return Tools::notifyTo($exception->getMessage());
+//        }
 
     }
 
@@ -117,7 +117,7 @@ class ClientController extends Controller
      */
     public function edit(Request $request, $id)
     {
-        try {
+//        try {
 
             $client = Client::find($id);
 
@@ -153,7 +153,7 @@ class ClientController extends Controller
             $ipsArray = $result = preg_split('/[;\r\n]+/s', $ips);
             foreach ($ipsArray as $item) {
                 $clientIp = RealIp::where('ip',$item)->first();
-                if ( $clientIp->client->id != $id) {
+                if ($clientIp && $clientIp->client->id != $id) {
                     throw new \Exception("此IP已存在,重复机构为{$clientIp->client->name}");
                 }
             }
@@ -188,9 +188,9 @@ class ClientController extends Controller
                 }
             }
             return Tools::notifyTo('update A Success');
-        } catch (\Exception $exception) {
-            return Tools::notifyTo($exception->getMessage());
-        }
+//        } catch (\Exception $exception) {
+//            return Tools::notifyTo($exception->getMessage());
+//        }
     }
 
     /**
