@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eaa499de-a068-417c-ac3d-6585d99e5113" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Home/MemberController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Home/MemberController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Middleware/MustOnRealIp.php" afterPath="$PROJECT_DIR$/app/Http/Middleware/MustOnRealIp.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -46,11 +45,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MemberController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MemberController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Home/MemberController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2808">
-              <caret line="99" column="52" lean-forward="true" selection-start-line="99" selection-start-column="52" selection-end-line="99" selection-end-column="52" />
+            <state relative-caret-position="452">
+              <caret line="54" column="17" lean-forward="true" selection-start-line="54" selection-start-column="17" selection-end-line="54" selection-end-column="17" />
               <folding>
                 <element signature="e#44#54#0#PHP" expanded="true" />
                 <element signature="e#530#589#0#PHP" expanded="false" />
@@ -123,6 +122,16 @@
                 <element signature="e#15449#15609#0#PHP" expanded="false" />
                 <element signature="e#15622#15763#0#PHP" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MustOnRealIp.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Middleware/MustOnRealIp.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="32" column="59" lean-forward="true" selection-start-line="32" selection-start-column="59" selection-end-line="32" selection-end-column="59" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -208,8 +217,8 @@
         <option value="$PROJECT_DIR$/resources/views/home/layouts/navlist.blade.php" />
         <option value="$PROJECT_DIR$/app/Models/Client.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/work/edit.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Middleware/MustOnRealIp.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Home/MemberController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Middleware/MustOnRealIp.php" />
       </list>
     </option>
   </component>
@@ -728,12 +737,12 @@
       <workItem from="1497248738974" duration="4470000" />
       <workItem from="1497336399097" duration="8434000" />
       <workItem from="1497364456942" duration="95000" />
-      <workItem from="1497411438699" duration="4351000" />
+      <workItem from="1497411438699" duration="4431000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="271062000" />
+    <option name="totallyTimeSpent" value="271142000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1144,14 +1153,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/MustOnRealIp.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="32" column="57" lean-forward="true" selection-start-line="32" selection-start-column="57" selection-end-line="32" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/work/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1242">
@@ -1162,8 +1163,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Home/MemberController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2808">
-          <caret line="99" column="52" lean-forward="true" selection-start-line="99" selection-start-column="52" selection-end-line="99" selection-end-column="52" />
+        <state relative-caret-position="452">
+          <caret line="54" column="17" lean-forward="true" selection-start-line="54" selection-start-column="17" selection-end-line="54" selection-end-column="17" />
           <folding>
             <element signature="e#44#54#0#PHP" expanded="true" />
             <element signature="e#530#589#0#PHP" expanded="false" />
@@ -1236,6 +1237,14 @@
             <element signature="e#15449#15609#0#PHP" expanded="false" />
             <element signature="e#15622#15763#0#PHP" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/MustOnRealIp.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="32" column="59" lean-forward="true" selection-start-line="32" selection-start-column="59" selection-end-line="32" selection-end-column="59" />
+          <folding />
         </state>
       </provider>
     </entry>
