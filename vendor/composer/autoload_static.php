@@ -58,7 +58,6 @@ class ComposerStaticInit4e6473fe0aa9c40a0eff2a33fbab33f6
             'Symfony\\Component\\ClassLoader\\' => 30,
             'SuperClosure\\' => 13,
             'Stringy\\' => 8,
-            'ScumPetard\\IpCheck\\' => 19,
         ),
         'P' => 
         array (
@@ -202,10 +201,6 @@ class ComposerStaticInit4e6473fe0aa9c40a0eff2a33fbab33f6
         'Stringy\\' => 
         array (
             0 => __DIR__ . '/..' . '/danielstjules/stringy/src',
-        ),
-        'ScumPetard\\IpCheck\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/packages/ScumPetard/Ipcheck/src',
         ),
         'Psy\\' => 
         array (
@@ -366,7 +361,6 @@ class ComposerStaticInit4e6473fe0aa9c40a0eff2a33fbab33f6
         'CreateMembersTable' => __DIR__ . '/../..' . '/database/migrations/2017_05_24_104122_create_members_table.php',
         'CreateModulesTable' => __DIR__ . '/../..' . '/database/migrations/2017_06_05_145620_create_modules_table.php',
         'CreateOauthsTable' => __DIR__ . '/../..' . '/database/migrations/2017_06_05_143700_create_oauths_table.php',
-        'CreateOptionsTable' => __DIR__ . '/../..' . '/database/migrations/2017_06_06_145039_create_options_table.php',
         'CreatePagesTable' => __DIR__ . '/../..' . '/database/migrations/2017_05_16_181641_create_pages_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
         'CreatePermissionRoleTable' => __DIR__ . '/../..' . '/database/migrations/2015_01_26_115523_create_permission_role_table.php',

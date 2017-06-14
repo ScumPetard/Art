@@ -44,15 +44,14 @@ class MemberController extends Controller
             $password = $request->get('password');
 
 
-            /** @var 获取机构IP $ip */
-            $ipcheck = new IpCheck();
+
 
             $isClient = false;
 
             foreach (RealIp::all() as $ip) {
                 $startTime = strtotime($ip->client->start_ip);
                 $endTime = strtotime($ip->client->end_ip);
-                if($ipcheck->check($ip->ip,$request->getClientIp())
+                if(Tools::check($ip->ip,$request->getClientIp())
                     && ($startTime < time() && time() < $endTime))
                 {
                     Session::put('clientRealIp', $ip->ip);

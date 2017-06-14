@@ -21,7 +21,6 @@ return array(
     'CreateMembersTable' => $baseDir . '/database/migrations/2017_05_24_104122_create_members_table.php',
     'CreateModulesTable' => $baseDir . '/database/migrations/2017_06_05_145620_create_modules_table.php',
     'CreateOauthsTable' => $baseDir . '/database/migrations/2017_06_05_143700_create_oauths_table.php',
-    'CreateOptionsTable' => $baseDir . '/database/migrations/2017_06_06_145039_create_options_table.php',
     'CreatePagesTable' => $baseDir . '/database/migrations/2017_05_16_181641_create_pages_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreatePermissionRoleTable' => $baseDir . '/database/migrations/2015_01_26_115523_create_permission_role_table.php',

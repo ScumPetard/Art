@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use App\Models\RealIp;
+use App\Tools\Tools;
 use Closure;
 use Illuminate\Support\Facades\Session;
 use ScumPetard\IpCheck\IpCheck;
@@ -23,14 +24,14 @@ class MustOnRealIp
             !Session::has('clientRealName') &&
             !Session::has('clientId')
         ) {
-            $ipcheck = new IpCheck();
+
             foreach (RealIp::all() as $ip) {
                 $startTime = strtotime($ip->client->start_ip);
                 $endTime = strtotime($ip->client->end_ip);
 
                 if(
 //                    $ipcheck->check($ip->ip,$request->getClientIp())
-                    $ipcheck->check($ip->ip,'192.168.0.255')
+                    Tools::check()($ip->ip,'192.168.0.255')
                     && ($startTime < time() && time() < $endTime)
                 ) {
                     Session::put('clientRealIp', $ip->ip);

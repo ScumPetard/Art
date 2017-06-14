@@ -151,4 +151,23 @@ class Tools
             ]);
         }
     }
+
+    public static function check($ipStr, $checkip)
+    {
+        $ipArray = explode('-', $ipStr);
+        $ip_start = static::get_iplong($ipArray[0]);
+        $ip_end = static::get_iplong($ipArray[1]);
+        $checkip = static::get_iplong($checkip);
+        if ($checkip >= $ip_start && $checkip <= $ip_end) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
+    public static function get_iplong($ip)
+    {
+        return bindec(decbin(ip2long($ip)));
+    }
 }
