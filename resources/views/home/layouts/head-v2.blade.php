@@ -3,7 +3,7 @@
 <div class="header2">
 
     <a href="/" class="logo">
-        <img src="{{ Session::get('clientLogo') ? Session::get('clientLogo') : '/assets/images/logo.png' }}" />
+        <img src="{{ Session::get('clientLogo') ? Session::get('clientLogo') : '/assets/images/logo.png' }}"/>
     </a>
 
     <div class="nav2">

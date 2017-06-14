@@ -4,6 +4,10 @@ Route::get('clear',function() {
     Session::flush();
 });
 
+Route::get('session',function() {
+    dd(Session::all());
+});
+
 Route::group(['namespace' => 'Home'], function () {
 
     Route::any('/member/sign', 'MemberController@sign');

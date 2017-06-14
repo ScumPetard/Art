@@ -29,7 +29,7 @@ class MemberController extends Controller
      */
     public function sign(Request $request)
     {
-//        try {
+       try {
 
             /** Get 请求 */
             if ($request->isMethod('get')) {
@@ -98,6 +98,7 @@ class MemberController extends Controller
                     Session::put('clientRealName', $client->name);
                     Session::put('clientId', $client->id);
                     Session::put('client', $client);
+                    Session::put('clientLogo',$client->logo);
                     return redirect('/');
 
                 }
@@ -148,13 +149,14 @@ class MemberController extends Controller
                 Session::put('clientRealName', $client->name);
                 Session::put('clientId', $client->id);
                 Session::put('client', $client);
+                Session::put('clientLogo',$client->logo);
                 return redirect('/');
             }
 
 
-//        } catch (\Exception $exception) {
-//            return view('errors.404');
-//        }
+       } catch (\Exception $exception) {
+           return view('errors.404');
+       }
     }
 
     /**

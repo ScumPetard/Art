@@ -20,7 +20,9 @@
             <div class="con show">
                 <ul>
                     <li>作品名称：<span>{{$work->work_name}}</span></li>
+                    @if(isset($work->author))
                     <li>作者：<a href="/artist/detail/{{$work->author->id}}" class="name"><i></i>{{$work->author->china_name}}</a></li>
+                    @endif
                     <li>国家：<span>{{$work->countries}}</span></li>
                     <li>创作时间：<span>{{$work->creation_time}}</span></li>
                     <li>材质：<span>{{$work->material}}</span></li>

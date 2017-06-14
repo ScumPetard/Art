@@ -4,9 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/resources/views/home/member/signup.blade.php" line="6" mnemonic="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eaa499de-a068-417c-ac3d-6585d99e5113" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Middleware/MustOnRealIp.php" afterPath="$PROJECT_DIR$/app/Http/Middleware/MustOnRealIp.php" />
-    </list>
+    <list default="true" id="eaa499de-a068-417c-ac3d-6585d99e5113" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,109 +32,7 @@
     <favorites_list name="盛世奇才" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="edit.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/work/edit.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1242">
-              <caret line="23" column="50" lean-forward="true" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MemberController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Home/MemberController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="452">
-              <caret line="54" column="17" lean-forward="true" selection-start-line="54" selection-start-column="17" selection-end-line="54" selection-end-column="17" />
-              <folding>
-                <element signature="e#44#54#0#PHP" expanded="true" />
-                <element signature="e#530#589#0#PHP" expanded="false" />
-                <element signature="e#4133#4280#0#PHP" expanded="false" />
-                <element signature="e#4412#4595#0#PHP" expanded="false" />
-                <element signature="e#4645#4827#0#PHP" expanded="false" />
-                <element signature="e#5304#5325#0#PHP" expanded="false" />
-                <element signature="e#5429#5488#0#PHP" expanded="false" />
-                <element signature="e#6134#6289#0#PHP" expanded="false" />
-                <element signature="e#6323#6529#0#PHP" expanded="false" />
-                <element signature="e#6565#6714#0#PHP" expanded="false" />
-                <element signature="e#6836#6962#0#PHP" expanded="false" />
-                <element signature="e#7484#9262#0#PHP" expanded="false" />
-                <element signature="e#7541#9256#0#PHP" expanded="false" />
-                <element signature="e#7668#8016#0#PHP" expanded="false" />
-                <element signature="e#8063#8411#0#PHP" expanded="false" />
-                <element signature="e#8493#9091#0#PHP" expanded="false" />
-                <element signature="e#8695#8958#0#PHP" expanded="false" />
-                <element signature="e#8801#8940#0#PHP" expanded="false" />
-                <element signature="e#9176#9256#0#PHP" expanded="false" />
-                <element signature="e#9268#9407#0#PHP" expanded="false" />
-                <element signature="e#9412#10141#0#PHP" expanded="false" />
-                <element signature="e#9465#10135#0#PHP" expanded="false" />
-                <element signature="e#9510#10042#0#PHP" expanded="false" />
-                <element signature="e#9559#9751#0#PHP" expanded="false" />
-                <element signature="e#9769#9961#0#PHP" expanded="false" />
-                <element signature="e#10055#10135#0#PHP" expanded="false" />
-                <element signature="e#10147#10173#0#PHP" expanded="false" />
-                <element signature="e#10178#10982#0#PHP" expanded="false" />
-                <element signature="e#10224#10595#0#PHP" expanded="false" />
-                <element signature="e#10444#10502#0#PHP" expanded="false" />
-                <element signature="e#10605#10976#0#PHP" expanded="false" />
-                <element signature="e#10825#10883#0#PHP" expanded="false" />
-                <element signature="e#10988#11009#0#PHP" expanded="false" />
-                <element signature="e#11014#12040#0#PHP" expanded="false" />
-                <element signature="e#11060#11542#0#PHP" expanded="false" />
-                <element signature="e#11280#11338#0#PHP" expanded="false" />
-                <element signature="e#11351#11505#0#PHP" expanded="false" />
-                <element signature="e#11421#11505#0#PHP" expanded="false" />
-                <element signature="e#11552#12034#0#PHP" expanded="false" />
-                <element signature="e#11772#11830#0#PHP" expanded="false" />
-                <element signature="e#11843#11997#0#PHP" expanded="false" />
-                <element signature="e#11913#11997#0#PHP" expanded="false" />
-                <element signature="e#12065#14377#0#PHP" expanded="false" />
-                <element signature="e#12166#12279#0#PHP" expanded="false" />
-                <element signature="e#12452#12631#0#PHP" expanded="false" />
-                <element signature="e#12641#12701#0#PHP" expanded="false" />
-                <element signature="e#12766#13637#0#PHP" expanded="false" />
-                <element signature="e#12836#12986#0#PHP" expanded="false" />
-                <element signature="e#12878#12972#0#PHP" expanded="false" />
-                <element signature="e#12999#13069#0#PHP" expanded="false" />
-                <element signature="e#13094#13589#0#PHP" expanded="false" />
-                <element signature="e#13723#13851#0#PHP" expanded="false" />
-                <element signature="e#13900#14099#0#PHP" expanded="false" />
-                <element signature="e#13925#14098#1#PHP" expanded="false" />
-                <element signature="e#13973#14087#0#PHP" expanded="false" />
-                <element signature="e#13996#14086#1#PHP" expanded="false" />
-                <element signature="e#13900#14123#0#PHP" expanded="false" />
-                <element signature="e#14133#14332#0#PHP" expanded="false" />
-                <element signature="e#14158#14331#1#PHP" expanded="false" />
-                <element signature="e#14206#14320#0#PHP" expanded="false" />
-                <element signature="e#14229#14319#1#PHP" expanded="false" />
-                <element signature="e#14133#14347#0#PHP" expanded="false" />
-                <element signature="e#14383#15941#0#PHP" expanded="false" />
-                <element signature="e#14445#14541#0#PHP" expanded="false" />
-                <element signature="e#14735#15334#0#PHP" expanded="false" />
-                <element signature="e#14840#15000#0#PHP" expanded="false" />
-                <element signature="e#15013#15154#0#PHP" expanded="false" />
-                <element signature="e#15344#15935#0#PHP" expanded="false" />
-                <element signature="e#15449#15609#0#PHP" expanded="false" />
-                <element signature="e#15622#15763#0#PHP" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MustOnRealIp.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Middleware/MustOnRealIp.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="32" column="59" lean-forward="true" selection-start-line="32" selection-start-column="59" selection-end-line="32" selection-end-column="59" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="450" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -737,12 +633,12 @@
       <workItem from="1497248738974" duration="4470000" />
       <workItem from="1497336399097" duration="8434000" />
       <workItem from="1497364456942" duration="95000" />
-      <workItem from="1497411438699" duration="4431000" />
+      <workItem from="1497411438699" duration="5123000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="271142000" />
+    <option name="totallyTimeSpent" value="271834000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -755,10 +651,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24270834" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" x="783" y="0" width="353" height="1076" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1609375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" x="783" y="0" width="353" height="1076" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962963" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1037,14 +932,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Home/IndexController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/app.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
@@ -1057,14 +944,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="229">
           <caret line="18" column="35" lean-forward="true" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Tools/Tools.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-896">
-          <caret line="144" column="9" lean-forward="true" selection-start-line="144" selection-start-column="9" selection-end-line="144" selection-end-column="9" />
           <folding />
         </state>
       </provider>
@@ -1161,10 +1040,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/MustOnRealIp.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="32" column="59" lean-forward="true" selection-start-line="32" selection-start-column="59" selection-end-line="32" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Home/MemberController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="54" column="17" lean-forward="true" selection-start-line="54" selection-start-column="17" selection-end-line="54" selection-end-column="17" />
+        <state relative-caret-position="326">
+          <caret line="153" column="0" lean-forward="true" selection-start-line="153" selection-start-column="0" selection-end-line="153" selection-end-column="0" />
           <folding>
             <element signature="e#44#54#0#PHP" expanded="true" />
             <element signature="e#530#589#0#PHP" expanded="false" />
@@ -1240,10 +1127,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/MustOnRealIp.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Home/IndexController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="32" column="59" lean-forward="true" selection-start-line="32" selection-start-column="59" selection-end-line="32" selection-end-column="59" />
+        <state relative-caret-position="510">
+          <caret line="18" column="25" lean-forward="true" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Tools/Tools.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="857">
+          <caret line="137" column="33" lean-forward="true" selection-start-line="137" selection-start-column="33" selection-end-line="137" selection-end-column="33" />
           <folding />
         </state>
       </provider>
