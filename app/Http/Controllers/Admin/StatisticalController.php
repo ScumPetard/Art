@@ -43,6 +43,33 @@ class StatisticalController extends Controller
 
     public function seach(Request $request)
     {
+        $huizong = ClickRecord::where('client_id',request('client_id'))
+            ->whereBetween('created_at', [request('start'), request('end')])->get()->groupBy('module_id')->map(function($gate){
+            return $gate->count();
+        });
+        foreach ($huizong->toArray() as $key => $value) {
+            $huizong[Module::find($key)->name] = $value;
+            unset($huizong[$key]);
+        }
+        if (count($huizong)) {
+            $huizong['汇总'] = collect($huizong)->sum();
+        }
+
+        return view('admin.statistical.seach')->with('click_groups',ClickRecord::where('client_id',request('client_id'))
+            ->whereBetween('created_at', [request('start'), request('end')])->get()
+            ->groupBy('click_time')->map(function($gate) {
+                return $gate->groupBy('module_id')->map(function ($group) {
+                    return $group->count();
+                });
+            })->map(function ($module){
+                foreach ($module->toArray() as $key => $item) {
+                    $module[Module::find($key)->name] = $item;
+                    unset($module[$key]);
+                }
+                $module['汇总'] = $module->sum();
+                return collect($module);
+            })
+        )->with('huizong',$huizong)->with('clients',Client::all());
 
     }
 }

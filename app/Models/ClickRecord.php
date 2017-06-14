@@ -12,7 +12,8 @@ class ClickRecord extends Model
         'module_id',
         'type',
         'name',
-        'click_time'
+        'click_time',
+        'client_id'
     ];
 
     public function module()

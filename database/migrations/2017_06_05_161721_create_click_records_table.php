@@ -18,6 +18,7 @@ class CreateClickRecordsTable extends Migration
             $table->string('type');
             $table->string('name');
             $table->string('click_time');
+            $table->integer('client_id')->references('id')->on('clients')->onDelete('cascade');
             $table->timestamps();
         });
     }

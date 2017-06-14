@@ -26,6 +26,7 @@
                         <div class="form-group">
                             <label>作者</label>
                             <select name="author_id" class="form-control" id="createauhtor">
+                                <option >未选择</option>
                                 @foreach($authors as $author)
                                     <option value="{{ $author->id }}"
                                             {{ $author->id == $work->author_id ? 'selected' : '' }} worktype_id="{{ $author->worktype_id }}">{{ $author->china_name }}</option>

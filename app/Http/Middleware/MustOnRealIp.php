@@ -29,13 +29,15 @@ class MustOnRealIp
                 $endTime = strtotime($ip->client->end_ip);
 
                 if(
-                    Tools::check($ip->ip,$request->getClientIp())
+//                    Tools::check($ip->ip,$request->getClientIp())
+                    Tools::check($ip->ip,'192.168.0.255')
                     && ($startTime < time() && time() < $endTime)
                 ) {
                     Session::put('clientRealIp', $ip->ip);
                     Session::put('clientRealName', $ip->client->name);
                     Session::put('clientId', $ip->client->id);
                     Session::put('clientLogo',$ip->client->logo);
+                    Session::put('navclient',$ip->client);
                     return $next($request);
                 }
             }

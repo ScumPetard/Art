@@ -140,6 +140,7 @@ class Tools
                 'name' => Session::get('client')->name,
                 'module_id' => $module_id,
                 'click_time' => date('Y-m',time()),
+                'client_id' => Session::get('clientId')
             ]);
         }
         if (Session::has('member')) {
@@ -148,6 +149,7 @@ class Tools
                 'name' => Session::get('member')->account,
                 'module_id' => $module_id,
                 'click_time' => date('Y-m',time()),
+                'client_id' => Session::get('clientId')
             ]);
         }
     }
