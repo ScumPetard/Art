@@ -6,7 +6,6 @@ use App\Models\RealIp;
 use App\Tools\Tools;
 use Closure;
 use Illuminate\Support\Facades\Session;
-use ScumPetard\IpCheck\IpCheck;
 
 class MustOnRealIp
 {

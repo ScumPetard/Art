@@ -14,7 +14,6 @@ use Illuminate\Http\Request;
 use App\Models\MemberFavorite;
 use App\Models\ShopCartRecord;
 use App\Models\ClientFavorite;
-use ScumPetard\IpCheck\IpCheck;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;

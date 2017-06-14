@@ -152,9 +152,6 @@ return [
         /** Excel */
         Maatwebsite\Excel\ExcelServiceProvider::class,
 
-        /** IP范围处理 */
-        ScumPetard\IpCheck\IpCheckProvider::class,
-
         /*
          * Application Service Providers...
          */
