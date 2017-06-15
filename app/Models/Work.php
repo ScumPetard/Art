@@ -38,7 +38,6 @@ class Work extends Model
         if (Carbon::now() > Carbon::parse($date)->addDays(10)) {
             return Carbon::parse($date);
         }
-
         return Carbon::parse($date)->diffForHumans();
     }
 
@@ -47,7 +46,6 @@ class Work extends Model
         if (Carbon::now() > Carbon::parse($date)->addDays(10)) {
             return Carbon::parse($date);
         }
-
         return Carbon::parse($date)->diffForHumans();
     }
 
@@ -58,12 +56,10 @@ class Work extends Model
 
     public function can($workdate_id)
     {
-        $where = ['work_id' => $this->id, 'workdate_id' => $workdate_id,];
-        $result = WorkAndWorkDate::where($where)->first();
-        if ($result) {
-            return true;
-        }
-        return false;
+        return WorkAndWorkDate::where([
+            'work_id' => $this->id,
+            'workdate_id' => $workdate_id
+        ])->first() ? true : false;
     }
 
     public function author()

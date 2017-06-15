@@ -119,4 +119,15 @@ class ArtistController extends Controller
             return view('errors.404');
         }
     }
+
+    public function workList($id)
+    {
+        if ($author = Author::find($id)) {
+            return view('home.artist.worklist',compact('author'))
+                ->with('works', Work::where(['author_id' => $id])
+                    ->orderBy('created_at','desc')
+                    ->paginate(16));
+        }
+        return back();
+    }
 }

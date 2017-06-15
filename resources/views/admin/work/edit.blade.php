@@ -21,7 +21,7 @@
                         <div class="form-group">
                             <label>作品名称</label>
                             <input type="text" class="form-control" name="work_name"
-                                   value="{{ $work->work_name or 'translatable' }}" maxlength="12" required>
+                                   value="{{ $work->work_name or '' }}" maxlength="12" required>
                         </div>
                         <div class="form-group">
                             <label>作者</label>
@@ -36,22 +36,22 @@
                         <div class="form-group">
                             <label>国家</label>
                             <input type="text" class="form-control" maxlength="12" name="countries"
-                                   value="{{ $work->countries or 'translatable' }}">
+                                   value="{{ $work->countries or '' }}">
                         </div>
                         <div class="form-group">
                             <label>创作时间</label>
                             <input type="date" class="form-control" name="creation_time"
-                                   value="{{ $work->creation_time or 'translatable' }}">
+                                   value="{{ $work->creation_time or '' }}">
                         </div>
                         <div class="form-group">
                             <label>材质</label>
                             <input type="text" class="form-control" maxlength="12" name="material"
-                                   value="{{ $work->material or 'translatable' }}">
+                                   value="{{ $work->material or '' }}">
                         </div>
                         <div class=" form-group">
                             <label>大小</label>
                             <input type="text" class="form-control" maxlength="12" name="size"
-                                   value="{{ $work->size or 'translatable' }}">
+                                   value="{{ $work->size or '' }}">
                         </div>
                         <div class=" form-group">
                             <label>作品类型</label>
@@ -71,12 +71,12 @@
                         <div class="form-group">
                             <label>创作地点</label>
                             <input type="text" class="form-control" maxlength="12" name="creating_location"
-                                   value="{{ $work->creating_location or 'translatable' }}">
+                                   value="{{ $work->creating_location or '' }}">
                         </div>
                         <div class="form-group">
                             <label>收藏地址</label>
                             <input type="text" class="form-control" maxlength="12" name="collection_location"
-                                   value="{{ $work->collection_location or 'translatable' }}">
+                                   value="{{ $work->collection_location or '' }}">
                         </div>
                         <div class="form-group">
                             <label>高清图 ( 图片大小 874x640 )</label>
@@ -87,7 +87,7 @@
                             <label>简介</label>
                             <textarea name="intro" cols="30" rows="3"
                                       class="form-control"
-                                      >translatable{{ $work->intro or 'translatable' }}</textarea>
+                                      >translatable{{ $work->intro or '' }}</textarea>
                         </div>
                         <div class="form-group">
                             <div class="radio radio-inline">

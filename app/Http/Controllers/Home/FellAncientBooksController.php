@@ -84,16 +84,16 @@ class FellAncientBooksController extends Controller
 
             if ($keywords) {
                 $where['keywords'] = $keywords;
-                $works = Work::where('work_name', 'like', '%' . $keywords . '%')->where('worktype_id',4)->paginate(16);
+                $works = Work::where('work_name', 'like', '%' . $keywords . '%')->where('worktype_id',4)->orderBy('created_at','desc')->paginate(16);
             } elseif ($author_id) {
                 $where['authorid'] = $author_id;
-                $works = Work::where('author_id', $author_id)->where('worktype_id',4)->paginate(16);
+                $works = Work::where('author_id', $author_id)->where('worktype_id',4)->orderBy('created_at','desc')->paginate(16);
             } elseif ($workdate_id) {
                 $where['workdate'] = $workdate_id;
                 $workids = WorkAndWorkDate::where('workdate_id', $workdate_id)->lists('work_id');
-                $works = Work::where('worktype_id',4)->whereIn('id', $workids)->paginate(16);
+                $works = Work::where('worktype_id',4)->whereIn('id', $workids)->orderBy('created_at','desc')->paginate(16);
             } else {
-                $works = Work::where('worktype_id',4)->paginate(16);
+                $works = Work::where('worktype_id',4)->orderBy('created_at','desc')->paginate(16);
             }
 
             return view('home.fellancientbooks.index', compact('banners', 'workdates', 'works', 'takeSport', 'where'));

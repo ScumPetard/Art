@@ -79,6 +79,14 @@ class StatisticalController extends Controller
         {
             return view('admin.statistical.custom')->with('modules',Module::all());
         }
-        dd(collect($request->all()));
+        $data = $request->except('_token');
+        $total = 0;
+        foreach ($data as $key => $item) {
+            $total += $item;
+            $data[Module::find($key)->name] = (int) $item;
+            unset($data[$key]);
+        }
+        $data['total'] = $total;
+        return view('admin.statistical.customs',compact('data'));
     }
 }

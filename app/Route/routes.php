@@ -33,6 +33,8 @@ Route::group(['namespace' => 'Home'], function () {
 
         Route::any('/artist/detail/{id}', 'ArtistController@artistDetail');
 
+        Route::get('/artist/{id}/work','ArtistController@workList')->name('artist.work.list');
+
 
         /** 西方油画首页 */
         Route::any('/westernoilpainting', 'WesternOilPainting@index');

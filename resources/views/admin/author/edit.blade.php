@@ -81,7 +81,7 @@
                         </div>
                         <div class="form-group">
                             <label>出生日期</label>
-                            <input type="date" class="form-control" name="birth_date" value="{{ $author->birth_date }}">
+                            <input type="text" class="form-control" name="birth_date" value="{{ $author->birth_date }}">
                         </div>
                         <div class="form-group">
                             <label>逝世地</label>
@@ -89,7 +89,7 @@
                         </div>
                         <div class="form-group">
                             <label>逝世时间</label>
-                            <input type="date" class="form-control" name="death" value="{{ $author->death }}">
+                            <input type="text" class="form-control" name="death" value="{{ $author->death }}">
                         </div>
                         <div class="form-group">
                             <label>艺术特点</label>

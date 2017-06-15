@@ -99,7 +99,7 @@ class MemberController extends Controller
                     Session::put('clientId', $client->id);
                     Session::put('client', $client);
                     Session::put('clientLogo',$client->logo);
-                    return redirect('/');
+                    return back();
 
                 }
 
@@ -118,7 +118,7 @@ class MemberController extends Controller
 
                 /** 登陆成功 */
                 Session::put('member', $member);
-                return redirect('/');
+                return back();
             } else {
 
                 /** @var ip不属于机构 查询账号为 @$account的机构 $client */
@@ -150,7 +150,7 @@ class MemberController extends Controller
                 Session::put('clientId', $client->id);
                 Session::put('client', $client);
                 Session::put('clientLogo',$client->logo);
-                return redirect('/');
+                return back();
             }
 
 

@@ -60,7 +60,7 @@
         <div class="det_case"><!--相关作品-->
             <div class="title">
                 <span class="tit">相关艺术作品</span>
-                <a href="javascript:;" class="more">赏析艺术家作品 &gt;</a>
+                <a href="{{ route('artist.work.list',['id' => $artist->id]) }}" class="more">赏析艺术家作品 &gt;</a>
             </div>
 
             <div class="det_slide">
