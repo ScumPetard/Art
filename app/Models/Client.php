@@ -98,4 +98,14 @@ class Client extends Model
         }
         return false;
     }
+
+    public function canfavorite($work_id)
+    {
+        if (ClientFavorite::where([
+            'client_id' => $this->id,
+            'work_id' => $work_id
+        ])->first()) {
+            return true;
+        }   return false;
+    }
 }

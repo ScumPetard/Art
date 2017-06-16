@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Tools;
 
 use App\Models\ClickRecord;
@@ -40,8 +41,10 @@ class Tools
             /** @var file Name $file_name */
             $resource->file_name = $request->file($filename)->getClientOriginalName();
 
-            $request->file($filename)->move('uploads/' . $path, time() . $resource->file_name);
-            $resource->file_path = 'uploads/' . $path . '/' . time() . $resource->file_name;
+            $exted = $request->file($filename)->getClientOriginalExtension();
+            $filepaths = time() . str_random() . '.' . $exted;
+            $request->file($filename)->move('uploads/' . $path, $filepaths);
+            $resource->file_path = 'uploads/' . $path . '/' . $filepaths;
             return $resource;
         } catch (\Exception $exception) {
             return Tools::notifyTo($exception->getMessage());
@@ -51,15 +54,12 @@ class Tools
     public static function tailoring($filepath, $width, $height = null)
     {
         try {
-
             if (is_null($height)) {
                 $image = Image::make($filepath)->fit($width);
             } else {
                 $image = Image::make($filepath)->resize($width, $height);
             }
-
             $result = $image->save($filepath);
-
         } catch (\Exception $exception) {
             return Tools::notifyTo($exception->getMessage());
         }
@@ -72,8 +72,7 @@ class Tools
         }
 
         $fchar = ord($str{0});
-        if ($fchar >= ord('A') && $fchar <= ord('z'))
-        {
+        if ($fchar >= ord('A') && $fchar <= ord('z')) {
             return strtoupper($str{0});
         }
 
@@ -139,7 +138,7 @@ class Tools
                 'type' => '机构账号',
                 'name' => Session::get('client')->name,
                 'module_id' => $module_id,
-                'click_time' => date('Y-m',time()),
+                'click_time' => date('Y-m', time()),
                 'client_id' => Session::get('clientId')
             ]);
         }
@@ -148,7 +147,7 @@ class Tools
                 'type' => '个人账号',
                 'name' => Session::get('member')->account,
                 'module_id' => $module_id,
-                'click_time' => date('Y-m',time()),
+                'click_time' => date('Y-m', time()),
                 'client_id' => Session::get('clientId')
             ]);
         }

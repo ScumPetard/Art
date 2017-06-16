@@ -2,6 +2,10 @@
 
 @section('title',$work->work_name)
 
+@section('css')
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+@stop
+
 @section('content')
 
     @include('home.layouts.head-v2')
@@ -21,7 +25,8 @@
                 <ul>
                     <li>作品名称：<span>{{$work->work_name}}</span></li>
                     @if(isset($work->author))
-                    <li>作者：<a href="/artist/detail/{{$work->author->id}}" class="name"><i></i>{{$work->author->china_name}}</a></li>
+                        <li>作者：<a href="/artist/detail/{{$work->author->id}}"
+                                  class="name"><i></i>{{$work->author->china_name}}</a></li>
                     @endif
                     <li>国家：<span>{{$work->countries}}</span></li>
                     <li>创作时间：<span>{{$work->creation_time}}</span></li>
@@ -32,7 +37,8 @@
                     <li>收藏机构： <span>{{$work->collection_location}}</span></li>
                     <li>艺术时期： <span>{{ isset($work->author) ? $work->author->art_date : ''}}</span></li>
                     @if(Session::has('member') || Session::has('client'))
-                        <li>下载图片： <span><a href="/api/down/big-image/{{$work->id}}" target="_blank" style="color: inherit">高清图</a></span>
+                        <li>下载图片： <span><a href="/api/down/big-image/{{$work->id}}" target="_blank"
+                                           style="color: inherit">高清图</a></span>
                         </li>
                     @endif
                 </ul>
@@ -43,18 +49,25 @@
 
             <div class="con">
                 <ul>
-                    <li style="overflow-y: scroll;height: 640px;vertical-align: top;padding: 2px 0;"><span>{{$work->intro}}</span></li>
+                    <li style="overflow-y: scroll;height: 640px;vertical-align: top;padding: 2px 0;">
+                        <span>{{$work->intro}}</span></li>
                 </ul>
             </div>
         </div>
         <div class="clear"></div>
 
-            <div class="det_ctrl">
-                @if(Session::has('member') || Session::has('client'))
-                <a href="javascript:;" class="btn collect_a" onclick="favorite(this);" data-id="{{$work->id}}">收藏</a>
+        <div class="det_ctrl">
+            @if(Session::has('member') || Session::has('client'))
+                <a href="javascript:;" class="btn collect_a" onclick="favorite(this);" data-id="{{$work->id}}">
+                    @if(Session::has('member'))
+                        <i class="fa {{ Session::get('member')->canfavorite($work->id) ? 'fa-heart' : 'fa-heart-o' }}" aria-hidden="true"></i>
+                    @elseif(Session::has('client'))
+                        <i class="fa {{ Session::get('client')->canfavorite($work->id) ? 'fa-heart' : 'fa-heart-o' }}" aria-hidden="true"></i>
+                    @endif
+                    收藏
+                </a>
                 <a href="javascript:;" class="btn share_a">分享</a>
                 <div class="share_area">
-                    <!-- JiaThis Button BEGIN -->
                     <div class="jiathis_style_24x24">
                         <a class="jiathis_button_qzone"></a>
                         <a class="jiathis_button_tsina"></a>
@@ -62,24 +75,24 @@
                         <a class="jiathis_button_weixin"></a>
                         <a class="jiathis_button_renren"></a>
                     </div>
-                    <!-- JiaThis Button END -->
                 </div>
-                @else
-                    <a href="javascript:;" class="btn collect_a" onclick="alertlogin();">收藏</a>
-                    <a href="javascript:;" class="btn" onclick="alertlogin();">分享</a>
-                @endif
-                {{--@if((Session::has('member') && Session::get('member')->canCat()) || (Session::has('client') && Session::get('client')->buy == 1))--}}
-                @if((Session::has('client') && Session::get('client')->buy == 1))
-                    <a href="javascript:;" onclick="addCreateCart(this);" data-id="{{$work->id}}" class="det_cart">加入购画车</a>
-                    <div class="num_ctrl rt">
-                        <div class="c_btn pre"></div>
-                        <input type="text" class="num" id="worknum" value="1"/>
-                        <div class="c_btn next"></div>
-                    </div>
-                @endif
+            @else
 
-                <div class="clear"></div>
-            </div>
+                <a href="/member/sign" class="btn collect_a"> <i class="fa fa-heart-o" aria-hidden="true"></i>收藏</a>
+                <a href="/member/sign" class="btn">分享</a>
+            @endif
+            {{--@if((Session::has('member') && Session::get('member')->canCat()) || (Session::has('client') && Session::get('client')->buy == 1))--}}
+            @if((Session::has('client') && Session::get('client')->buy == 1))
+                <a href="javascript:;" onclick="addCreateCart(this);" data-id="{{$work->id}}" class="det_cart">加入购画车</a>
+                <div class="num_ctrl rt">
+                    <div class="c_btn pre"></div>
+                    <input type="text" class="num" id="worknum" value="1"/>
+                    <div class="c_btn next"></div>
+                </div>
+            @endif
+
+            <div class="clear"></div>
+        </div>
 
         <div class="det_case"><!--相关作品-->
             <div class="title">
@@ -117,17 +130,17 @@
             layer.load(2);
             var work_id = $(object).attr('data-id');
             if (!work_id) {
-                return layer.msg('服务器错误!',{time:500},function () {
+                return layer.msg('服务器错误!', {time: 500}, function () {
                     location.reload();
                 });
             }
             $.post(
                 '/api/favorite',
-                {'work_id':work_id,'_token':'{{csrf_token()}}'},
+                {'work_id': work_id, '_token': '{{csrf_token()}}'},
                 function (result) {
                     layer.closeAll('loading');
                     return layer.msg(result['message']);
-                },'json');
+                }, 'json');
         }
 
         /**
@@ -139,11 +152,17 @@
             layer.load(2);
             $.post(
                 '/api/createcart',
-                {'work_id':work_id,'work_num':work_num,'_token':'{{ csrf_token() }}'},
+                {'work_id': work_id, 'work_num': work_num, '_token': '{{ csrf_token() }}'},
                 function (result) {
                     layer.closeAll('loading');
+                    if (result['code']) {
+
+                    }
+                    else {
+
+                    }
                     return layer.msg(result['message']);
-                },'json');
+                }, 'json');
         }
     </script>
 @stop

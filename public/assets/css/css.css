@@ -1067,9 +1067,12 @@ div.clear{
 	height:35px;
 	line-height:35px;
 }
-.det_ctrl .collect_a{
-	background:url("../images/det_collect.png") no-repeat left center;	
+.det_ctrl .btn i{
+	font-size: 30px;
+	color: #FC8A15;
+	margin-right: 5px;
 }
+
 .det_ctrl .share_a{
 	background:url("../images/det_share.png") no-repeat left center;	
 }

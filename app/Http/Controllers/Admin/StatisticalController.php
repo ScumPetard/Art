@@ -83,6 +83,9 @@ class StatisticalController extends Controller
         $total = 0;
         foreach ($data as $key => $item) {
             $total += $item;
+            if (!isset($data[Module::find($key)->name])) {
+                $data[Module::find($key)->name] = null;
+            }
             $data[Module::find($key)->name] = (int) $item;
             unset($data[$key]);
         }

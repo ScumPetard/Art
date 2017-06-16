@@ -23,18 +23,12 @@ class MemberFavorite extends Model
     {
         if (Carbon::now() > Carbon::parse($date)->addDays(10)) {
             return Carbon::parse($date);
-        }
-
-        return Carbon::parse($date)->diffForHumans();
+        }   return Carbon::parse($date)->diffForHumans();
     }
-
     public function getUpdatedAtAttribute($date)
     {
         if (Carbon::now() > Carbon::parse($date)->addDays(10)) {
             return Carbon::parse($date);
-        }
-
-        return Carbon::parse($date)->diffForHumans();
+        }   return Carbon::parse($date)->diffForHumans();
     }
-
 }

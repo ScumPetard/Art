@@ -48,6 +48,7 @@
             swf: '/system/plugins/webupload/Uploader.swf',
             server: window.location.href,
             pick: '#picker',
+            compress:false,
             accept: {
                 title: 'Images',
                 extensions: 'gif,jpg,jpeg,bmp,png',

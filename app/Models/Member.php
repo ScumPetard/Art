@@ -73,4 +73,14 @@ class Member extends Model
         }
         return false;
     }
+
+    public function canfavorite($work_id)
+    {
+        if (MemberFavorite::where([
+            'member_id' => $this->id,
+            'work_id' => $work_id
+        ])->first()) {
+            return true;
+        }   return false;
+    }
 }

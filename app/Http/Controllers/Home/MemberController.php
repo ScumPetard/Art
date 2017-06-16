@@ -150,7 +150,7 @@ class MemberController extends Controller
                 Session::put('clientId', $client->id);
                 Session::put('client', $client);
                 Session::put('clientLogo',$client->logo);
-                return back();
+                return redirect()->back();
             }
 
 
