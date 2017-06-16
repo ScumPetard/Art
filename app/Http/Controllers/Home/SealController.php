@@ -25,7 +25,7 @@ class SealController extends Controller
     {
         if (!Tools::canPermession(7)) {
             Flashy::error('您所在机构没有权限访问以下内容，看看其他作品吧');
-            return redirect('/member/sign');
+            return view('home.stop');
         }
         try {
             Tools::clickRecord(7);
