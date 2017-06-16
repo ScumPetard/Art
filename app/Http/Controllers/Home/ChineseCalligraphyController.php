@@ -25,7 +25,7 @@ class ChineseCalligraphyController extends Controller
     public function index(Request $request)
     {
         if (!Tools::canPermession(6)) {
-            Flashy::error('您所在机构没有权限访问以下内容');
+            Flashy::error('您所在机构没有权限访问以下内容，看看其他作品吧');
             return redirect('/member/sign');
         }
         try {
