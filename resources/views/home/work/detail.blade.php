@@ -55,7 +55,7 @@
             <div class="con">
                 <ul style="padding: 0;">
                     <li style="overflow-y: scroll;height: 640px;vertical-align: top;padding:30px;">
-                        <span>{{$work->intro}}</span></li>
+                        <span style="    word-break: break-all;">{{$work->intro}}</span></li>
                 </ul>
             </div>
         </div>
