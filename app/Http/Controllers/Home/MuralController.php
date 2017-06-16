@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Home;
 
+use Flashy;
 use App\Models\Author;
 use App\Models\Banner;
 use App\Models\Work;
@@ -23,6 +24,7 @@ class MuralController extends Controller
     public function index(Request $request)
     {
         if (!Tools::canPermession(5)) {
+            Flashy::error('您所在机构没有权限访问以下内容');
             return redirect('/member/sign');
         }
         try {

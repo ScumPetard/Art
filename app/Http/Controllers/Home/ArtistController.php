@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Home;
 
+use Flashy;
 use App\Models\Author;
 use App\Models\Work;
 use App\Tools\Tools;
@@ -21,6 +22,7 @@ class ArtistController extends Controller
     public function artist(Request $request)
     {
         if (!Tools::canPermession(10)) {
+            Flashy::error('您所在机构没有权限访问以下内容');
             return redirect('/member/sign');
         }
         Tools::clickRecord(10);

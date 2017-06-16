@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Home;
 
+use Flashy;
 use App\Models\Banner;
 use App\Models\IndexPictures;
 use App\Tools\Tools;
@@ -16,6 +17,7 @@ class IndexController extends Controller
     public function index(Request $request)
     {
         if (!Tools::canPermession(1)) {
+            Flashy::error('您所在机构没有权限访问以下内容');
             return redirect('/member/sign');
         }
         try {
