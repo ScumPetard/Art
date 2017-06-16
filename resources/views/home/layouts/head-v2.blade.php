@@ -22,12 +22,7 @@
                 @endif
             @endif
         </div>
-        <div class="head_search2">
-            <form>
-                <input type="text" class="text" value="请输入搜索内容" />
-                <input type="button" class="sub" value="" title="点击搜索" />
-            </form>
-        </div>
+        @include('home.layouts.seach',['version' => 2])
     </div>
 
 </div>

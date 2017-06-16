@@ -1,14 +1,14 @@
 <?php
 
-Route::get('clear',function() {
+Route::get('clear', function () {
     Session::flush();
 });
 
-Route::get('session',function() {
+Route::get('session', function () {
     dd(Session::all());
 });
 
-Route::get('info',function() {
+Route::get('info', function () {
     phpinfo();
 });
 
@@ -19,25 +19,21 @@ Route::group(['namespace' => 'Home'], function () {
     Route::group(['middleware' => 'must.readip'], function () {
         Route::get('/', 'IndexController@index');
 
-
-            Route::get('/about/', 'AboutController@about');
-            Route::get('/about/statement', 'AboutController@statement');
-            Route::get('/about/contact', 'AboutController@contact');
-            Route::get('/about/cooperation', 'AboutController@cooperation');
-            Route::any('/about/problem', 'AboutController@problem');
-
-
+        Route::get('/about/', 'AboutController@about');
+        Route::get('/about/statement', 'AboutController@statement');
+        Route::get('/about/contact', 'AboutController@contact');
+        Route::get('/about/cooperation', 'AboutController@cooperation');
+        Route::any('/about/problem', 'AboutController@problem');
 
         /** 注册 */
         Route::any('/member/signup', 'MemberController@signUp');
-
-
+        Route::post('/seach','IndexController@seach');
         /** 艺术家首页 */
         Route::any('/artist', 'ArtistController@artist');
 
         Route::any('/artist/detail/{id}', 'ArtistController@artistDetail');
 
-        Route::get('/artist/{id}/work','ArtistController@workList')->name('artist.work.list');
+        Route::get('/artist/{id}/work', 'ArtistController@workList')->name('artist.work.list');
 
 
         /** 西方油画首页 */

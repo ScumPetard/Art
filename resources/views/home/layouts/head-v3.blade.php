@@ -27,12 +27,7 @@
             <a href="/about">关于我们</a>
             <a href="/about/problem">问题反馈</a>
         </div>
-        <div class="head_search1">
-            <form>
-                <input type="text" class="text" value="请输入搜索内容"/>
-                <input type="button" class="sub" value="" title="点击搜索"/>
-            </form>
-        </div>
+        @include('home.layouts.seach',['version' => 1])
     </div>
 
 </div>
