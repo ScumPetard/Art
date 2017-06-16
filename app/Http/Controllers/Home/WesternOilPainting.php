@@ -24,6 +24,9 @@ class WesternOilPainting extends Controller
 {
     public function index(Request $request)
     {
+        if (!Tools::canPermession(3)) {
+            return redirect('/member/sign');
+        }
         try {
             Tools::clickRecord(3);
             /** @var 轮播图 $banners */

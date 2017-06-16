@@ -15,6 +15,9 @@ class IndexController extends Controller
 {
     public function index(Request $request)
     {
+        if (!Tools::canPermession(1)) {
+            return redirect('/member/sign');
+        }
         try {
             Tools::clickRecord(1);
             $banners = Banner::where('is_cat',36)->orderBy('sort','desc')->get();

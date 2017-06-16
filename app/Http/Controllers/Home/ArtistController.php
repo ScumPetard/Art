@@ -20,6 +20,9 @@ class ArtistController extends Controller
     /** 艺术家首页 */
     public function artist(Request $request)
     {
+        if (!Tools::canPermession(10)) {
+            return redirect('/member/sign');
+        }
         Tools::clickRecord(10);
         try {
 

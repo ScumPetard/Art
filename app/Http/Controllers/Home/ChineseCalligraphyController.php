@@ -23,6 +23,9 @@ class ChineseCalligraphyController extends Controller
 {
     public function index(Request $request)
     {
+        if (!Tools::canPermession(6)) {
+            return redirect('/member/sign');
+        }
         try {
             Tools::clickRecord(6);
 

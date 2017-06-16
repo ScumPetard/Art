@@ -171,4 +171,20 @@ class Tools
     {
         return bindec(decbin(ip2long($ip)));
     }
+
+    public static function canPermession($module_id)
+    {
+        if (Session::has('client')) {
+            if (Session::get('client')->canModule($module_id)) {
+                return true;
+            }
+            return false;
+        }
+        if (Session::has('member')) {
+            if (Session::get('member')->client->canModule($module_id)) {
+                return true;
+            }
+            return false;
+        }
+    }
 }

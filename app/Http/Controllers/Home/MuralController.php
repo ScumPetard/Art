@@ -22,6 +22,9 @@ class MuralController extends Controller
 {
     public function index(Request $request)
     {
+        if (!Tools::canPermession(5)) {
+            return redirect('/member/sign');
+        }
         try {
             Tools::clickRecord(5);
             /** @var 轮播图 $banners */

@@ -22,6 +22,9 @@ class SealController extends Controller
 {
     public function index(Request $request)
     {
+        if (!Tools::canPermession(7)) {
+            return redirect('/member/sign');
+        }
         try {
             Tools::clickRecord(7);
             /** @var 轮播图 $banners */

@@ -24,6 +24,9 @@ class FellAncientBooksController extends Controller
 {
     public function index(Request $request)
     {
+        if (!Tools::canPermession(8)) {
+            return redirect('/member/sign');
+        }
         try {
             Tools::clickRecord(8);
             /** @var 轮播图 $banners */

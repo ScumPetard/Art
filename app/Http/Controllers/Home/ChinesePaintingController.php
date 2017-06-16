@@ -23,6 +23,9 @@ class ChinesePaintingController extends Controller
 {
     public function index(Request $request)
     {
+        if (!Tools::canPermession(4)) {
+            return redirect('/member/sign');
+        }
         try {
             Tools::clickRecord(4);
             /** @var 轮播图 $banners */

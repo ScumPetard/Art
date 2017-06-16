@@ -22,6 +22,9 @@ class JapanController extends Controller
 {
     public function index(Request $request)
     {
+        if (!Tools::canPermession(9)) {
+            return redirect('/member/sign');
+        }
         try {
             Tools::clickRecord(9);
             /** @var 轮播图 $banners */
