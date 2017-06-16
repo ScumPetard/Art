@@ -4,13 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/resources/views/home/member/signup.blade.php" line="6" mnemonic="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eaa499de-a068-417c-ac3d-6585d99e5113" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Route/routes.php" afterPath="$PROJECT_DIR$/app/Route/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Tools/Tools.php" afterPath="$PROJECT_DIR$/app/Tools/Tools.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/home/work/detail.blade.php" afterPath="$PROJECT_DIR$/resources/views/home/work/detail.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/vendor/flashy/message.blade.php" afterPath="$PROJECT_DIR$/resources/views/vendor/flashy/message.blade.php" />
-    </list>
+    <list default="true" id="eaa499de-a068-417c-ac3d-6585d99e5113" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -669,12 +663,12 @@
       <workItem from="1497516031065" duration="1774000" />
       <workItem from="1497530241130" duration="24000" />
       <workItem from="1497575531219" duration="4343000" />
-      <workItem from="1497584011394" duration="6577000" />
+      <workItem from="1497584011394" duration="6654000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="292625000" />
+    <option name="totallyTimeSpent" value="292702000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
