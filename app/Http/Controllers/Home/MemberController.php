@@ -2,6 +2,7 @@
 namespace App\Http\Controllers\Home;
 
 use Excel;
+use Flashy;
 use App\Models\Work;
 use App\Tools\Tools;
 use App\Models\Member;
@@ -76,19 +77,19 @@ class MemberController extends Controller
 
                     /** 判断是否存在 如果不存在返回错误信息 */
                     if (!$client) {
-                        Session::flash('memberSign_error', '该用户不存在');
+                        Flashy::error('该用户不存在');
                         return back()->withInput();
                     }
 
                     $startTime = strtotime($client->start_ip);
                     $endTime = strtotime($client->end_ip);
                     if (!($startTime < time() && time() < $endTime)) {
-                        Session::flash('memberSign_error', '机构账户已过期');
+                        Flashy::error('机构账户已过期');
                         return back()->withInput();
                     }
                     /** 判断密码是否正确 */
                     if (!\Hash::check($password, $client->password)) {
-                        Session::flash('memberSign_error', '密码错误 !');
+                        Flashy::error('密码错误 !');
                         return back()->withInput();
                     }
 
@@ -99,6 +100,7 @@ class MemberController extends Controller
                     Session::put('clientId', $client->id);
                     Session::put('client', $client);
                     Session::put('clientLogo',$client->logo);
+                    Flashy::success('登陆成功 !');
                     return back();
 
                 }
@@ -106,18 +108,19 @@ class MemberController extends Controller
                 $startTime = strtotime($member->client->start_ip);
                 $endTime = strtotime($member->client->end_ip);
                 if (!($startTime < time() && time() < $endTime)) {
-                    Session::flash('memberSign_error', '机构账户已过期');
+                    Flashy::error('机构账户已过期 !');
                     return back()->withInput();
                 }
 
                 /** 如果密码错误返回错误信息 */
                 if (!Hash::check($password, $member->password)) {
-                    Session::flash('memberSign_error', '密码错误');
+                    Flashy::error('密码错误 !');
                     return back()->withInput();
                 }
 
                 /** 登陆成功 */
                 Session::put('member', $member);
+                Flashy::success('登陆成功 !');
                 return back();
             } else {
 
@@ -126,20 +129,20 @@ class MemberController extends Controller
 
                 /** 判断是否存在 如果不存在返回错误信息 */
                 if (!$client) {
-                    Session::flash('memberSign_error', '该用户不存在');
+                    Flashy::error('该用户不存在 !');
                     return back()->withInput();
                 }
 
                 $startTime = strtotime($client->start_ip);
                 $endTime = strtotime($client->end_ip);
                 if (!($startTime < time() && time() < $endTime)) {
-                    Session::flash('memberSign_error', '机构账户已过期');
+                    Flashy::error('机构账户已过期 !');
                     return back()->withInput();
                 }
 
                 /** 判断密码是否正确 */
                 if (!\Hash::check($password, $client->password)) {
-                    Session::flash('memberSign_error', '密码错误 !');
+                    Flashy::error('密码错误 !');
                     return back()->withInput();
                 }
 
@@ -150,6 +153,7 @@ class MemberController extends Controller
                 Session::put('clientId', $client->id);
                 Session::put('client', $client);
                 Session::put('clientLogo',$client->logo);
+                Flashy::success('登陆成功 !');
                 return redirect()->back();
             }
 
@@ -165,6 +169,7 @@ class MemberController extends Controller
     public function signOut()
     {
         Session::flush();
+        Flashy::success('退出成功 !');
         return redirect('/');
     }
 
@@ -189,25 +194,25 @@ class MemberController extends Controller
 
         /** 判断信息是否完整 */
         if (!$account || !$password || !$confirmpassword || !$email) {
-            Session::flash('memberSign_error', '请填写完整信息 !');
+            Flashy::error('请填写完整信息 !');
             return back()->withInput();
         }
 
         /** 判断邮箱是否唯一 */
         if (Member::where('email', $email)->first()) {
-            Session::flash('memberSign_error', '邮箱已存在 !');
+            Flashy::error('邮箱已存在 !');
             return back()->withInput();
         }
 
         /** 判断账号是否唯一 */
         if (Member::where('account', $account)->first() || Client::where('account', $account)->first()) {
-            Session::flash('memberSign_error', '账号已存在 !');
+            Flashy::error('账号已存在 !');
             return back()->withInput();
         }
 
         /** 判断两次密码是否相同 */
         if ($password !== $confirmpassword) {
-            Session::flash('memberSign_error', '两次输入密码不同 !');
+            Flashy::error('两次输入密码不同 !');
             return back()->withInput();
         }
 
@@ -216,7 +221,7 @@ class MemberController extends Controller
 
         /** 判断机构ID是否存在 */
         if (!$client_id) {
-            Session::flash('memberSign_error', 'IP异常 !');
+            Flashy::error('IP异常 !');
             return back()->withInput();
         }
 
@@ -228,10 +233,10 @@ class MemberController extends Controller
 
         /** 判断是否注册成功 */
         if ($data) {
-            Session::flash('memberSign_error', '注册成功 !');
+            Flashy::success('注册成功 !');
             return redirect('/member/sign');
         } else {
-            Session::flash('memberSign_error', '注册失败 !');
+            Flashy::error('注册失败 !');
             return back()->withInput();
         }
     }
@@ -396,7 +401,7 @@ class MemberController extends Controller
     {
         $cart_id = $request->get('xls');
         if (!count($cart_id) || count($cart_id) > 200) {
-            return Tools::notifyTo('未选择导出项或导出项大于200');
+            Flashy::error('未选择导出项或导出项大于200 !');
         }
 
         $cellData = [];
@@ -473,32 +478,32 @@ class MemberController extends Controller
         if(Session::has('client')) {
             $client = Client::find(Session::get('client')->id);
             if(!Hash::check($end_password,$client->password)) {
-                Session::flash('memberReset_error', '旧密码错误 !');
+                Flashy::error('旧密码错误 !');
                 return back();
             }
             if (!isset($new_password[5])) {
-                Session::flash('memberReset_error', '密码最少6位 !');
+                Flashy::error('密码最少6位 !');
                 return back();
             }
             $client->password = bcrypt($new_password);
             $client->save();
-            Session::flash('memberReset_error', '修改成功 !');
+            Flashy::success('修改成功 !');
             return back();
         }
 
         if(Session::has('member')) {
             $member = Member::find(Session::get('member')->id);
             if(!Hash::check($end_password,$member->password)) {
-                Session::flash('memberReset_error', '旧密码错误 !');
+                Flashy::error('旧密码错误 !');
                 return back();
             }
             if (!isset($new_password[5])) {
-                Session::flash('memberReset_error', '密码最少6位 !');
+                Flashy::error('密码最少6位 !');
                 return back();
             }
             $member->password = $new_password;
             $member->save();
-            Session::flash('memberReset_error', '修改成功 !');
+            Flashy::success('修改成功 !');
             return back();
         }
     }

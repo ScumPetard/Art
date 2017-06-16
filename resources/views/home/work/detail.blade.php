@@ -36,9 +36,14 @@
                     <li>创作地点：<span>{{$work->creating_location}}</span></li>
                     <li>收藏机构： <span>{{$work->collection_location}}</span></li>
                     <li>艺术时期： <span>{{ isset($work->author) ? $work->author->art_date : ''}}</span></li>
+
                     @if(Session::has('member') || Session::has('client'))
                         <li>下载图片： <span><a href="/api/down/big-image/{{$work->id}}" target="_blank"
                                            style="color: inherit">高清图</a></span>
+                        </li>
+                        @else
+                        <li>下载图片： <span><a href="/member/sign" target="_blank"
+                                           style="color: inherit">请登录后下载</a></span>
                         </li>
                     @endif
                 </ul>
@@ -79,7 +84,7 @@
             @else
 
                 <a href="/member/sign" class="btn collect_a"> <i class="fa fa-heart-o" aria-hidden="true"></i>收藏</a>
-                <a href="/member/sign" class="btn">分享</a>
+                <a href="/member/sign" class="btn share_a">分享</a>
             @endif
             {{--@if((Session::has('member') && Session::get('member')->canCat()) || (Session::has('client') && Session::get('client')->buy == 1))--}}
             @if((Session::has('client') && Session::get('client')->buy == 1))
@@ -155,12 +160,6 @@
                 {'work_id': work_id, 'work_num': work_num, '_token': '{{ csrf_token() }}'},
                 function (result) {
                     layer.closeAll('loading');
-                    if (result['code']) {
-
-                    }
-                    else {
-
-                    }
                     return layer.msg(result['message']);
                 }, 'json');
         }

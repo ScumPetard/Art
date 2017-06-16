@@ -20,4 +20,5 @@
 </body>
 @include('home.layouts.notify')
 @yield('js')
+@include('flashy::message')
 </html>

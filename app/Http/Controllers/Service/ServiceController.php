@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Service;
 
+use Flashy;
 use App\Models\Client;
 use App\Models\ClientCart;
 use App\Models\ClientDownloads;
@@ -51,6 +52,7 @@ class ServiceController extends Controller
 
                 /** 检查是否超过下载次数 */
                 if ($count >= $downloadCount) {
+                    Flashy::error('下载数量超过限制 !');
                     return redirect('/');
                 }
 
@@ -75,6 +77,7 @@ class ServiceController extends Controller
 
                 /** 检查是否超过下载次数 */
                 if ($count >= $downloadCount) {
+                    Flashy::error('下载数量超过限制 !');
                     return redirect('/');
                 }
 

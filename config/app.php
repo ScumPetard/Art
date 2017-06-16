@@ -152,6 +152,8 @@ return [
         /** Excel */
         Maatwebsite\Excel\ExcelServiceProvider::class,
 
+        MercurySeries\Flashy\FlashyServiceProvider::class,
+
         /*
          * Application Service Providers...
          */
@@ -210,6 +212,7 @@ return [
         'Image'     => Intervention\Image\Facades\Image::class,
         'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+        'Flashy' => MercurySeries\Flashy\Flashy::class,
 
 
     ],
