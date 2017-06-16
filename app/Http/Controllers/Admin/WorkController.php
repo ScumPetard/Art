@@ -23,7 +23,7 @@ class WorkController extends Controller
     public function index()
     {
         try {
-            $works = Work::orderBy('created_at', 'desc')->paginate(15);
+            $works = Work::orderBy('created_at', 'desc')->get();
             return view('admin.work.index', compact('works'));
         } catch (\Exception $exception) {
             return Tools::notifyTo($exception->getMessage());

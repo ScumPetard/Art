@@ -20,7 +20,7 @@ class AuthorController extends Controller
      */
     public function index()
     {
-        return view('admin.author.index')->with('authors', Author::paginate(5));
+        return view('admin.author.index')->with('authors', Author::all());
     }
 
     /**

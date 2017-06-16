@@ -122,6 +122,8 @@ DataTable.ext.renderer.pageButton.bootstrap = function ( settings, host, idx, bu
 				}
 			}
 		}
+
+
 	};
 
 	// IE9 throws an 'unknown error' if document.activeElement is used

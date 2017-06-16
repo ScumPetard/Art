@@ -16,20 +16,12 @@
             <div class="box">
                 <div class="box-header">
                     <h3 class="box-title">作品</h3>
-                    <div class="col-md-6 pull-right">
-                        <div class="col-xs-6">
-                            <input type="text" class="form-control" id="pageNum" style="width: 60%;display:inline-block"
-                                   placeholder="请输入页码">
-                            <a href="" class="btn btn-success" id="redirectA">跳转</a>
-                        </div>
-                    </div>
-
                     <a href="/admin/work/create" class="btn btn-success pull-right">添加单个作品</a>
                     {{--<a href="/admin/work/batchcreate" class="btn btn-info pull-right"--}}
                     {{--style="margin-right: 20px;">批量添加作品</a>--}}
                 </div>
                 <div class="box-body">
-                    <table class="table table-bordered table-hover">
+                    <table id="example1" class="table table-bordered table-hover">
                         <thead>
                         <tr>
                             <th>ID</th>
@@ -70,15 +62,6 @@
                         @endforeach
                         </tbody>
                     </table>
-                    <div class="row" id="laravelPages">
-                        <div class="col-sm-7">
-                            <div class="dataTables_paginate paging_simple_numbers"
-                                 style="margin-top: 25px;float: right;text-align: right">
-                                {!! $works->render() !!}
-                            </div>
-
-                        </div>
-                    </div>
                 </div>
 
             </div>
