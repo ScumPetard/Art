@@ -689,10 +689,7 @@ div.clear{
 	text-align:center;
 	color:#3d3d3d;
 }
-.pro_nav1 a:hover,.pro_nav1 a.hover{
-	color:#fff;
-	background:url("../images/pro_nav1.png") no-repeat left center;	
-}
+
 .pro_nav2 a:hover,.pro_nav2 a.hover{
 	color:#fff;
 	background:url("../images/pro_nav2.png") no-repeat left center;	
@@ -1370,10 +1367,7 @@ div.clear{
 
 /*reg 注册*/
 
-.workdate-hover {
-    color: #fff !important;
-    background: url(../images/pro_nav1.png) no-repeat left center !important;
-}
+
 
 .author-hover {
     color: #841e1e !important;

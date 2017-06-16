@@ -2,6 +2,19 @@
 
 @section('title','西方油画')
 
+@section('css')
+    <style>
+        .workdate-hover {
+            color: #fff !important;
+            background: url(/assets/images/pro_nav3.png) no-repeat left center !important;
+        }
+        .pro_nav1 a:hover,.pro_nav1 a.hover{
+            color:#fff;
+            background:url("/assets/images/pro_nav3.png") no-repeat left center;
+        }
+    </style>
+@stop
+
 @section('content')
     @include('home.layouts.head-v3')
 

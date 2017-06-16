@@ -2,6 +2,19 @@
 
 @section('title','中国国画')
 
+@section('css')
+    <style>
+        .workdate-hover {
+            color: #fff !important;
+            background: url(/assets/images/pro_nav1.png) no-repeat left center !important;
+        }
+        .pro_nav1 a:hover,.pro_nav1 a.hover{
+            color:#fff;
+            background:url("/assets/images/pro_nav1.png") no-repeat left center;
+        }
+    </style>
+@stop
+
 @section('content')
     @include('home.layouts.head-v3')
 
@@ -62,16 +75,12 @@
         </div>
     </div>
     <div class="pro_zw"></div>
-
     <div class="pro_wrap">
-
-
         <div class="pro_nav pro_nav1">
             @foreach($workdates as $workdate)
                 <a href="?workdate={{$workdate->id}}" @if(isset($where['workdate'])) class="{{ $workdate->id==$where['workdate'] ? 'workdate-hover' : '' }}" @endif>{{$workdate->name}}</a>
             @endforeach
         </div>
-
         <div class="pro_list">
             <div class="pro_items">
                 @foreach($works as $work)
@@ -83,7 +92,6 @@
                 <div class="clear"></div>
             </div>
         </div>
-
         <div class="line20"></div>
         <div class="line20"></div>
         {!! $works->appends($where)->render() !!}
@@ -91,15 +99,8 @@
     </div>
     @include('home.layouts.footer')
 @stop
-
 @section('js')
     <script>
-        $(function () {
-            $('.in>.headName').hover(function () {
-                var location = $(this).index();
-                $('.cla_left>.listname').hide();
-                $('.cla_left>.listname').eq(location).show();
-            });
-        })
+        $(function () {$('.in>.headName').hover(function () {var location = $(this).index();$('.cla_left>.listname').hide();$('.cla_left>.listname').eq(location).show();});})
     </script>
 @stop

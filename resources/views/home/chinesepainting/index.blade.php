@@ -2,6 +2,19 @@
 
 @section('title','中国国画')
 
+@section('css')
+    <style>
+        .workdate-hover {
+            color: #fff !important;
+            background: url(/assets/images/pro_nav2.png) no-repeat left center !important;
+        }
+        .pro_nav1 a:hover,.pro_nav1 a.hover{
+            color:#fff;
+            background:url("/assets/images/pro_nav2.png") no-repeat left center;
+        }
+    </style>
+@stop
+
 @section('content')
     @include('home.layouts.head-v3')
 
