@@ -3,6 +3,7 @@
 namespace App\Tools;
 
 use App\Models\ClickRecord;
+use App\Models\Client;
 use Image;
 use Illuminate\Support\Facades\Session;
 
@@ -174,17 +175,22 @@ class Tools
 
     public static function canPermession($module_id)
     {
+        if (Session::has('clientId')) {
+            $client = Client::find(Session::get('clientId'));
+            if ($client->canModule($module_id)) {
+                return true;
+            }
+        }
         if (Session::has('client')) {
             if (Session::get('client')->canModule($module_id)) {
                 return true;
             }
-            return false;
         }
         if (Session::has('member')) {
             if (Session::get('member')->client->canModule($module_id)) {
                 return true;
             }
-            return false;
         }
+        return false;
     }
 }

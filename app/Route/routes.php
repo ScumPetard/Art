@@ -12,6 +12,10 @@ Route::get('info', function () {
     phpinfo();
 });
 
+Route::get('/test',function(){
+   return view('home.stop');
+});
+
 Route::group(['namespace' => 'Home'], function () {
 
     Route::any('/member/sign', 'MemberController@sign');
