@@ -9,7 +9,7 @@
         <div style="height:32px;"></div>
 
         <div class="det_banner">
-            <img src="{{$work->big_image}}"/>
+            <img src="{{ $work->big_image }}"/>
         </div>
         <div class="det_tabs">
 
@@ -43,13 +43,14 @@
 
             <div class="con">
                 <ul>
-                    <li><span>{{$work->intro}}</span></li>
+                    <li style="overflow-y: scroll;height: 640px;vertical-align: top;padding: 2px 0;"><span>{{$work->intro}}</span></li>
                 </ul>
             </div>
         </div>
         <div class="clear"></div>
-        @if(Session::has('member') || Session::has('client'))
+
             <div class="det_ctrl">
+                @if(Session::has('member') || Session::has('client'))
                 <a href="javascript:;" class="btn collect_a" onclick="favorite(this);" data-id="{{$work->id}}">收藏</a>
                 <a href="javascript:;" class="btn share_a">分享</a>
                 <div class="share_area">
@@ -63,6 +64,10 @@
                     </div>
                     <!-- JiaThis Button END -->
                 </div>
+                @else
+                    <a href="javascript:;" class="btn collect_a" onclick="alertlogin();">收藏</a>
+                    <a href="javascript:;" class="btn" onclick="alertlogin();">分享</a>
+                @endif
                 {{--@if((Session::has('member') && Session::get('member')->canCat()) || (Session::has('client') && Session::get('client')->buy == 1))--}}
                 @if((Session::has('client') && Session::get('client')->buy == 1))
                     <a href="javascript:;" onclick="addCreateCart(this);" data-id="{{$work->id}}" class="det_cart">加入购画车</a>
@@ -75,7 +80,7 @@
 
                 <div class="clear"></div>
             </div>
-        @endif
+
         <div class="det_case"><!--相关作品-->
             <div class="title">
                 <span class="tit">相关作品</span>

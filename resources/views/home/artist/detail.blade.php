@@ -79,7 +79,7 @@
 
         </div>
 
-        <div class="art_intro">
+        <div class="art_intro" style="background: none;">
 
             <div class="title">
                 <span class="tit"><img src="/assets/images/art_ico1.png"/>历史评价</span>
@@ -87,7 +87,7 @@
             <p>{{$artist->evaluation}}</p>
         </div>
 
-        <div class="art_intro">
+        <div class="art_intro"  style="background: none;">
 
             <div class="title">
                 <span class="tit"><img src="/assets/images/art_ico2.png"/>艺术家简介</span>

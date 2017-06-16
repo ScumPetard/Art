@@ -38,13 +38,13 @@
                         <input type="checkbox" class="ck_d" name="xls[]" value="{{ $cart->id }}">
                     </label>
                     <a href="#" class="photo">
-                        <img src="{{$cart->work->small_image}}"/>
+                        <img src="{{$cart->work->small_image or ''}}"/>
                     </a>
                     <ul>
-                        <li>名称：{{$cart->work->work_name}}</li>
-                        <li>作者：{{$cart->work->author->china_name}}</li>
-                        <li>大小：{{$cart->work->size}}</li>
-                        <li>类型：{{$cart->work->worktype->name}}</li>
+                        <li>名称：{{$cart->work->work_name or ''}}</li>
+                        <li>作者：{{$cart->work->author->china_name or ''}}</li>
+                        <li>大小：{{$cart->work->size or ''}}</li>
+                        <li>类型：{{$cart->work->worktype->name or ''}}</li>
                     </ul>
                     <div class="mof rt">
                         <div class="num_ctrl">

@@ -50,7 +50,6 @@ class Author extends Model
             return Carbon::parse($date);
         }
 
-
         return Carbon::parse($date)->diffForHumans();
     }
 
