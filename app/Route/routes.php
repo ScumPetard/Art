@@ -8,6 +8,10 @@ Route::get('session',function() {
     dd(Session::all());
 });
 
+Route::get('info',function() {
+    phpinfo();
+});
+
 Route::group(['namespace' => 'Home'], function () {
 
     Route::any('/member/sign', 'MemberController@sign');
