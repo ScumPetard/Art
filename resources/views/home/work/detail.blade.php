@@ -1,22 +1,69 @@
 @extends('home.layouts.app')
-
 @section('title',$work->work_name)
-
 @section('css')
     <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <style>
+        #Layer1 {
+            z-index: 100;
+            position: absolute;
+            top: 150px;
+        }
+
+        #Layer2 {
+            z-index: 1;
+            position: absolute;
+        }
+    </style>
 @stop
-
 @section('content')
-
     @include('home.layouts.head-v2')
     <div class="wrapin">
         <div style="height:32px;"></div>
-
         <div class="det_banner">
-            <img src="{{ $work->big_image }}"/>
+
+
+            <div onLoad="" onmouseup="document.selection.empty()" oncontextmenu="return false"
+                 onselectstart="return false" ondragstart="return false" onbeforecopy="return false"
+                 style="overflow-y: hidden; overflow-x: hidden" oncopy="document.selection.empty()"
+                 leftmargin="0" topmargin="0" onselect="document.selection.empty()" marginheight="0"
+                 marginwidth="0">
+                <div id="Layer1">
+                    <table cellspacing="2" cellpadding="0" border="0">
+                        <tbody>
+                        <tr>
+                            <td>
+                                <img title="还原" style="cursor: hand;height: inherit;width: inherit" onClick="realsize();" height="20" src="/assets/images/zoom.gif"width="20">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img title="放大" style="cursor: hand;height: inherit;width: inherit" onClick="bigit();" height="20" src="/assets/images/zoom_in.gif"width="20">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img title="缩小" style="cursor: hand;height: inherit;width: inherit" onClick="smallit();" height="20" src="/assets/images/zoom_out.gif"width="20">
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p>
+                    <br>
+                </p>
+                <div id="hiddenPic" style="z-index: 1; left: 0px; visibility: hidden; width: 0px;
+        position: absolute; top: 150px; height: 0px">
+                    <img src="{{ $work->big_image }}" border="0" name="images2">
+                </div>
+                <div class="dragAble" id="block1" onMouseOver="dragObj=block1; drag=1;" style="z-index: 10;
+        left: 0px; width: 0px; position: absolute; top: 150px; height: 0px" onMouseOut=""
+                     drag="0">
+                    <img onmousewheel="return onWheelZoom(this)" style="zoom: 0.7" src="{{ $work->big_image }}"
+                         border="0" name="images1">
+                </div>
+            </div>
         </div>
         <div class="det_tabs">
-
             <div class="handle">
                 <a href="javascript:;" class="hover">作品简介</a>
                 <a href="javascript:;">作品详情</a>
@@ -41,7 +88,7 @@
                         <li>下载图片： <span><a href="/api/down/big-image/{{$work->id}}" target="_blank"
                                            style="color: inherit">高清图</a></span>
                         </li>
-                        @else
+                    @else
                         <li>下载图片： <span><a href="/member/sign" target="_blank"
                                            style="color: inherit">请登录后下载</a></span>
                         </li>
@@ -51,7 +98,6 @@
                     <span style="margin-left: 75px;">{!! QrCode::size(150)->generate(Request::root()."/api/down/image/".$work->id) !!}</span>
                 @endif
             </div>
-
             <div class="con">
                 <ul style="padding: 0;">
                     <li style="overflow-y: scroll;height: 520px;vertical-align: top;padding:30px;">
@@ -65,9 +111,11 @@
             @if(Session::has('member') || Session::has('client'))
                 <a href="javascript:;" class="btn collect_a" onclick="favorite(this);" data-id="{{$work->id}}">
                     @if(Session::has('member'))
-                        <i class="fa {{ Session::get('member')->canfavorite($work->id) ? 'fa-heart' : 'fa-heart-o' }}" aria-hidden="true"></i>
+                        <i class="fa {{ Session::get('member')->canfavorite($work->id) ? 'fa-heart' : 'fa-heart-o' }}"
+                           aria-hidden="true"></i>
                     @elseif(Session::has('client'))
-                        <i class="fa {{ Session::get('client')->canfavorite($work->id) ? 'fa-heart' : 'fa-heart-o' }}" aria-hidden="true"></i>
+                        <i class="fa {{ Session::get('client')->canfavorite($work->id) ? 'fa-heart' : 'fa-heart-o' }}"
+                           aria-hidden="true"></i>
                     @endif
                     收藏
                 </a>
@@ -127,6 +175,7 @@
     <script type="text/javascript" src="/assets/js/detail.js"></script>
     <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
     <script src="https://cdn.bootcss.com/layer/3.0.1/layer.min.js"></script>
+    <script src="/assets/js/drag_map.js"></script>
     <script>
         /**
          * 用户收藏
@@ -163,5 +212,19 @@
                     return layer.msg(result['message']);
                 }, 'json');
         }
+
+
+        function MM_reloadPage(init) {
+            if (init == true) with (navigator) {
+                if ((appName == "Netscape") && (parseInt(appVersion) == 4)) {
+                    document.MM_pgW = innerWidth;
+                    document.MM_pgH = innerHeight;
+                    onresize = MM_reloadPage;
+                }
+            }
+            else if (innerWidth != document.MM_pgW || innerHeight != document.MM_pgH) location.reload();
+        }
+        MM_reloadPage(true);
+
     </script>
 @stop
