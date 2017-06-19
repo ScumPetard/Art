@@ -22,7 +22,7 @@ class MustOnAdmin
 
         if (Auth::check() && Auth::user()->is_admin == 1) {
 
-            if (Auth::user()->can($routeName) || 1) {
+            if (Auth::user()->can($routeName)) {
                 return $next($request);
             }
 

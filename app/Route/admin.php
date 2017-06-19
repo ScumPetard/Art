@@ -200,6 +200,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
         /** 首页信息 */
         Route::any('/indexpictures','IndexPicturesController@index')->name('admin.indexpictures.show');
 
+
         /** 添加首页信息 */
         Route::any('/indexpictures/create','IndexPicturesController@create')->name('admin.indexpictures.create');
 
@@ -238,7 +239,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
         Route::any('/custom','StatisticalController@custom')->name('admin.statistical.custom');
 
         /** 首页信息 */
-        Route::any('/indexpictures','IndexPicturesController@index')->name('admin.indexpictures.show');
+
 
 
         Route::any('/problem','ProblemController@index')->name('admin.problem.index');
@@ -246,6 +247,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
 
         /**___________下载记录___________/__**/
         Route::any('/download','DownloadController@index')->name('admin.download.index');
+
         Route::any('/download/destroy/{id}','DownloadController@destroy')->name('admin.download.destroy');
     });
 
