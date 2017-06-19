@@ -5,17 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eaa499de-a068-417c-ac3d-6585d99e5113" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/盛世奇才.iml" afterPath="$PROJECT_DIR$/.idea/盛世奇才.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/work/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/work/edit.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/home/chinesecalligraphy/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/home/chinesecalligraphy/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/home/chinesepainting/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/home/chinesepainting/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/home/fellancientbooks/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/home/fellancientbooks/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/home/japan/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/home/japan/index.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/home/layouts/app.blade.php" afterPath="$PROJECT_DIR$/resources/views/home/layouts/app.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/home/mural/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/home/mural/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/home/seal/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/home/seal/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/home/westernoilpainting/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/home/westernoilpainting/index.blade.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -45,7 +35,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/home/westernoilpainting/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="378">
@@ -115,13 +105,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="app.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/home/layouts/app.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="18" column="17" lean-forward="true" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+            <state relative-caret-position="566">
+              <caret line="21" column="8" lean-forward="false" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
               <folding>
-                <marker date="1497856742000" expanded="true" signature="595:641" ph="..." />
+                <marker date="1497857935000" expanded="true" signature="603:649" ph="..." />
               </folding>
             </state>
           </provider>
@@ -215,7 +205,6 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/WorkController.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/work/edit.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Home/WorkController.php" />
-        <option value="$PROJECT_DIR$/resources/views/home/layouts/app.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/home/seal/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/home/mural/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/home/japan/index.blade.php" />
@@ -223,6 +212,7 @@
         <option value="$PROJECT_DIR$/resources/views/home/chinesepainting/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/home/chinesecalligraphy/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/home/westernoilpainting/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/home/layouts/app.blade.php" />
       </list>
     </option>
   </component>
@@ -1058,12 +1048,12 @@
       <workItem from="1497838264471" duration="2654000" />
       <workItem from="1497842607768" duration="165000" />
       <workItem from="1497842790843" duration="618000" />
-      <workItem from="1497851831176" duration="2274000" />
+      <workItem from="1497851831176" duration="2509000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="300438000" />
+    <option name="totallyTimeSpent" value="300673000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1423,16 +1413,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/home/layouts/app.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="18" column="17" lean-forward="true" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
-          <folding>
-            <marker date="1497856742000" expanded="true" signature="595:641" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/home/seal/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
@@ -1486,6 +1466,16 @@
         <state relative-caret-position="378">
           <caret line="34" column="46" lean-forward="false" selection-start-line="34" selection-start-column="46" selection-end-line="34" selection-end-column="46" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/home/layouts/app.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="566">
+          <caret line="21" column="8" lean-forward="false" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+          <folding>
+            <marker date="1497857935000" expanded="true" signature="603:649" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
