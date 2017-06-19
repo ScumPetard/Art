@@ -191,6 +191,7 @@ class WorkController extends Controller
         if (!$imageResource) {
             throw new \Exception('images upload failure');
         }
+     
 
         /** @var get file name $file_name */
         $file_name = $imageResource->file_name;
@@ -204,7 +205,7 @@ class WorkController extends Controller
             ->resize(env('IMAGE_SMALL_WIDTH'), env('IMAGE_SMALL_HEIGHT'));
 
         /** @var get small image path $small_image_path */
-        $small_image_path = 'uploads/work/small_image/' . time() . $imageResource->file_name;
+        $small_image_path = 'uploads/work/small_image/' .time() . str_random() . '.' . $request->file('file')->getClientOriginalExtension();
 
         /** save resource path */
         $small_image->save($small_image_path);
