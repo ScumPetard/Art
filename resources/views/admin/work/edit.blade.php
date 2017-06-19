@@ -118,6 +118,7 @@
 @stop
 
 @section('js')
+    <link href="https://cdn.bootcss.com/select2/4.0.3/css/select2.min.css" rel="stylesheet">
     <script src="/system/plugins/select2/select2.full.min.js"></script>
     <script>
         $(".select2").select2();

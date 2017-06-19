@@ -32,7 +32,7 @@
             </li>
             @endforeach
         </ul>
-        <div class="btns">
+        <div class="btns" id="you_jump_i_jump">
             @foreach($banners as $banner)
                 <span></span>
             @endforeach
@@ -42,7 +42,7 @@
     </div>
     <!--banner 大轮播图-->
 
-    <div class="pro_cla pro_cla1">
+    <div class="pro_cla pro_cla1" >
         <div class="wrapin">
 
             <div class="cla_left lt">
@@ -62,7 +62,7 @@
 
             </div>
 
-            <div class="cla_right rt">
+            <div class="cla_right rt" >
                 <form action="" method="post">
                     <input type="text" class="text" name="keywords" placeholder="在本分类下检索" />
                     {{ csrf_field() }}
@@ -76,7 +76,7 @@
     </div>
     <div class="pro_zw"></div>
 
-    <div class="pro_wrap">
+    <div class="pro_wrap" >
 
 
         <div class="pro_nav pro_nav1">
@@ -97,7 +97,7 @@
             </div>
         </div>
 
-        <div class="line20"></div>
+        <div class="line20" ></div>
         <div class="line20"></div>
         {!! $works->appends($where)->render() !!}
         <div class="clear"></div>
@@ -114,5 +114,6 @@
                 $('.cla_left>.listname').eq(location).show();
             });
         })
+
     </script>
 @stop

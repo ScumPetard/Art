@@ -18,6 +18,11 @@
 <body>
 @yield('content')
 </body>
+<script>
+    window.onload = function () {
+        window.location.href='#you_jump_i_jump';
+    }
+</script>
 @include('home.layouts.notify')
 @yield('js')
 @include('flashy::message')

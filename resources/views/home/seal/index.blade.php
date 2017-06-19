@@ -30,7 +30,7 @@
             </li>
             @endforeach
         </ul>
-        <div class="btns">
+        <div class="btns" id="you_jump_i_jump">
             @foreach($banners as $banner)
                 <span></span>
             @endforeach
