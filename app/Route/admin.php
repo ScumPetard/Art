@@ -172,6 +172,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
         /** 删除 */
         Route::any('/work/destroy/{id}','WorkController@destroy')->name('admin.work.destroy');
 
+        Route::post('/work/delete','WorkController@delete')->name('admin.work.delete');
+
         /* --------------- 作品管理 --------------- */
 
 

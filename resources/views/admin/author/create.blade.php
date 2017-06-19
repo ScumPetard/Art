@@ -21,7 +21,7 @@
                         </div>
                         <div class="form-group">
                             <label>外文名</label>
-                            <input type="text" class="form-control" maxlength="15" name="foreign_name">
+                            <input type="text" class="form-control" name="foreign_name">
                         </div>
                         <div class="form-group">
                             <label>别名</label>

@@ -19,8 +19,12 @@
                     <a href="/admin/work/create" class="btn btn-success pull-right">添加单个作品</a>
                     {{--<a href="/admin/work/batchcreate" class="btn btn-info pull-right"--}}
                     {{--style="margin-right: 20px;">批量添加作品</a>--}}
+                    <a href="javascript:void(0);" onclick="selectall();" class="btn btn-default" style="margin-left: 25px;">全选/反选</a>
+                    <a href="javascript:void(0);" onclick="tijiao();" class="btn btn-default" style="margin-left: 25px;">删除所选</a>
                 </div>
                 <div class="box-body">
+                    <form name="sbform" action="/admin/work/delete" method="post" id="deleteForm">
+
                     <table id="example1" class="table table-bordered table-hover">
                         <thead>
                         <tr>
@@ -38,7 +42,14 @@
                         <tbody>
                         @foreach($works as $work)
                             <tr>
-                                <td>{{ $work->id }}</td>
+                                <td>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="workid[]" value="{{ $work->id }}">
+                                            {{ $work->id }}
+                                        </label>
+                                    </div>
+                                </td>
                                 <td><img src="{{ $work->small_image }}" class="img-thumbnail"></td>
                                 <td>{{ $work->file_name }}</td>
                                 <td>
@@ -60,8 +71,10 @@
                                 </td>
                             </tr>
                         @endforeach
+
                         </tbody>
                     </table>
+                    </form>
                 </div>
 
             </div>
@@ -77,5 +90,13 @@
             var num = $(this).val();
             $('#redirectA').attr('href', '/admin/work?page=' + num);
         });
+        function selectall() {
+            $('.checkbox>label').click();
+        }
+        function tijiao() {
+
+            $('form[name=sbform]').submit();
+
+        }
     </script>
 @stop

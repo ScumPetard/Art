@@ -3,6 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Author;
+use App\Models\ClientCart;
+use App\Models\ClientFavorite;
+use App\Models\MemberCart;
+use App\Models\MemberFavorite;
 use App\Models\Work;
 use App\Models\WorkAndWorkDate;
 use App\Models\WorkDate;
@@ -191,7 +195,7 @@ class WorkController extends Controller
         if (!$imageResource) {
             throw new \Exception('images upload failure');
         }
-     
+
 
         /** @var get file name $file_name */
         $file_name = $imageResource->file_name;
@@ -249,9 +253,28 @@ class WorkController extends Controller
         try {
             WorkAndWorkDate::where('work_id', $id)->delete();
             Work::destroy($id);
+            ClientCart::where('work_id',$id)->delete();
+            ClientFavorite::where('work_id',$id)->delete();
+            MemberCart::where('work_id',$id)->delete();
+            MemberFavorite::where('work_id',$id)->delete();
             return Tools::notifyTo('delete Success');
         } catch (\Exception $exception) {
             return Tools::notifyTo($exception->getMessage());
         }
+    }
+
+    public function delete(Request $request)
+    {
+        $deleteArray = request('workid');
+        if (!count($deleteArray)) {
+            return Tools::notifyTo('请选择需要删除的数据');
+        }
+        WorkAndWorkDate::whereIn('work_id', $deleteArray)->delete();
+        Work::whereIn('id', $deleteArray)->delete();
+        ClientCart::whereIn('work_id', $deleteArray)->delete();
+        ClientFavorite::whereIn('work_id', $deleteArray)->delete();
+        MemberCart::whereIn('work_id', $deleteArray)->delete();
+        MemberFavorite::whereIn('work_id', $deleteArray)->delete();
+        return Tools::notifyTo('delete Success');
     }
 }

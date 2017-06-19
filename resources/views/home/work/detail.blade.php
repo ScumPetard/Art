@@ -20,48 +20,7 @@
     <div class="wrapin">
         <div style="height:32px;"></div>
         <div class="det_banner">
-
-
-            <div onLoad="" onmouseup="document.selection.empty()" oncontextmenu="return false"
-                 onselectstart="return false" ondragstart="return false" onbeforecopy="return false"
-                 style="overflow-y: hidden; overflow-x: hidden" oncopy="document.selection.empty()"
-                 leftmargin="0" topmargin="0" onselect="document.selection.empty()" marginheight="0"
-                 marginwidth="0">
-                <div id="Layer1">
-                    <table cellspacing="2" cellpadding="0" border="0">
-                        <tbody>
-                        <tr>
-                            <td>
-                                <img title="还原" style="cursor: hand;height: inherit;width: inherit" onClick="realsize();" height="20" src="/assets/images/zoom.gif"width="20">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <img title="放大" style="cursor: hand;height: inherit;width: inherit" onClick="bigit();" height="20" src="/assets/images/zoom_in.gif"width="20">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <img title="缩小" style="cursor: hand;height: inherit;width: inherit" onClick="smallit();" height="20" src="/assets/images/zoom_out.gif"width="20">
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <p>
-                    <br>
-                </p>
-                <div id="hiddenPic" style="z-index: 1; left: 0px; visibility: hidden; width: 0px;
-        position: absolute; top: 150px; height: 0px">
-                    <img src="{{ $work->big_image }}" border="0" name="images2">
-                </div>
-                <div class="dragAble" id="block1" onMouseOver="dragObj=block1; drag=1;" style="z-index: 10;
-        left: 0px; width: 0px; position: absolute; top: 150px; height: 0px" onMouseOut=""
-                     drag="0">
-                    <img onmousewheel="return onWheelZoom(this)" style="zoom: 0.7" src="{{ $work->big_image }}"
-                         border="0" name="images1">
-                </div>
-            </div>
+            <img src="{{ $work->big_image }}"/>
         </div>
         <div class="det_tabs">
             <div class="handle">
