@@ -299,6 +299,7 @@ class WorkController extends Controller
                             @WorkAndWorkDate::create(['work_id' => $work->id, 'workdate_id' => $wor]);
                         }
 
+                        $work->work_name = @$excelDatum['作品名称'];
                         $work->author_id = (int) @$excelDatum['作者'];
                         $work->countries = @$excelDatum['国家'];
                         $work->creation_time = @$excelDatum['创作时间'];
