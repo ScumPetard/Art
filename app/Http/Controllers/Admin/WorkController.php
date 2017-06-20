@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Excel;
 use App\Models\Author;
 use App\Models\ClientCart;
 use App\Models\ClientFavorite;
@@ -276,5 +277,46 @@ class WorkController extends Controller
         MemberCart::whereIn('work_id', $deleteArray)->delete();
         MemberFavorite::whereIn('work_id', $deleteArray)->delete();
         return Tools::notifyTo('delete Success');
+    }
+
+    public function excelImport(Request $request)
+    {
+
+        if ($request->isMethod('get')) {
+               return view('admin.work.excelimport'); 
+        }
+        try {
+            $excel = $request->file('excel');
+            $filePath = $excel->getRealPath();
+            Excel::load($filePath, function($reader) {
+                $excelData = $reader->all();
+                foreach ($excelData as $excelDatum) {
+                    $work = Work::find((int) $excelDatum['作品']);
+                    if ($work) {
+                        $workdate =  @explode('-',@$excelDatum['作品分类时期']);
+                        @WorkAndWorkDate::where('work_id', $work->id)->delete();
+                        foreach ($workdate as $wor) {
+                            @WorkAndWorkDate::create(['work_id' => $work->id, 'workdate_id' => $wor]);
+                        }
+
+                        $work->author_id = (int) @$excelDatum['作者'];
+                        $work->countries = @$excelDatum['国家'];
+                        $work->creation_time = @$excelDatum['创作时间'];
+                        $work->material = @$excelDatum['材质'];
+                        $work->size = @$excelDatum['大小'];
+                        $work->worktype_id = (int) @$excelDatum['作品类型'];
+                        $work->creating_location = @$excelDatum['创作地点'];
+                        $work->collection_location = @$excelDatum['收藏地址'];
+                        $work->intro = @$excelDatum['简介'];
+                        $work->is_complete = (int) @$excelDatum['完成'];
+                        @$work->save();
+
+                    }
+                }
+            });
+            return Tools::notifyTo('录入成功');
+        } catch (\Exception $exception) {
+            return Tools::notifyTo('录入失败');
+        }
     }
 }

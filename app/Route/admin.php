@@ -174,6 +174,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
 
         Route::post('/work/delete','WorkController@delete')->name('admin.work.delete');
 
+        Route::any('/work/excelimport','WorkController@excelImport')->name('admin.work.excelimport');
+
         /* --------------- 作品管理 --------------- */
 
 

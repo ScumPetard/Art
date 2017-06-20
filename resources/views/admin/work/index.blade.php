@@ -17,6 +17,7 @@
                 <div class="box-header">
                     <h3 class="box-title">作品</h3>
                     <a href="/admin/work/create" class="btn btn-success pull-right">添加单个作品</a>
+                    <a href="/admin/work/excelimport" class="btn btn-warning pull-right" style="margin-right: 25px;">Excel 导入作品信息</a>
                     {{--<a href="/admin/work/batchcreate" class="btn btn-info pull-right"--}}
                     {{--style="margin-right: 20px;">批量添加作品</a>--}}
                     <a href="javascript:void(0);" onclick="selectall();" class="btn btn-default" style="margin-left: 25px;">全选/反选</a>
