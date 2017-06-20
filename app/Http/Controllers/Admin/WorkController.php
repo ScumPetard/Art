@@ -283,7 +283,7 @@ class WorkController extends Controller
     {
 
         if ($request->isMethod('get')) {
-               return view('admin.work.excelimport'); 
+               return view('admin.work.excelimport');
         }
         try {
             $excel = $request->file('excel');
@@ -298,18 +298,50 @@ class WorkController extends Controller
                         foreach ($workdate as $wor) {
                             @WorkAndWorkDate::create(['work_id' => $work->id, 'workdate_id' => $wor]);
                         }
+                        if (@$excelDatum['作品名称']) {
+                            $work->work_name = @$excelDatum['作品名称'];
+                        }
 
-                        $work->work_name = @$excelDatum['作品名称'];
-                        $work->author_id = (int) @$excelDatum['作者'];
-                        $work->countries = @$excelDatum['国家'];
-                        $work->creation_time = @$excelDatum['创作时间'];
-                        $work->material = @$excelDatum['材质'];
-                        $work->size = @$excelDatum['大小'];
-                        $work->worktype_id = (int) @$excelDatum['作品类型'];
-                        $work->creating_location = @$excelDatum['创作地点'];
-                        $work->collection_location = @$excelDatum['收藏地址'];
-                        $work->intro = @$excelDatum['简介'];
-                        $work->is_complete = (int) @$excelDatum['完成'];
+                        if ((int) @$excelDatum['作者'] ) {
+                            $work->author_id = (int) @$excelDatum['作者'];
+                        }
+
+                        if (@$excelDatum['国家']) {
+                            $work->countries = @$excelDatum['国家'];
+                        }
+
+                        if (@$excelDatum['创作时间']) {
+                           $work->creation_time = @$excelDatum['创作时间'];
+                        }
+
+                        if (@$excelDatum['材质']) {
+                            $work->material = @$excelDatum['材质'];
+                        }
+
+                        if (@$excelDatum['大小']) {
+                            $work->size = @$excelDatum['大小'];
+                        }
+
+                        if ((int) @$excelDatum['作品类型']) {
+                            $work->worktype_id = (int) @$excelDatum['作品类型'];
+                        }
+
+                        if (@$excelDatum['创作地点']) {
+                            $work->creating_location = @$excelDatum['创作地点'];
+                        }
+
+                        if (@$excelDatum['收藏地址']) {
+                            $work->collection_location = @$excelDatum['收藏地址'];
+                        }
+
+                        if (@$excelDatum['简介']) {
+                            $work->intro = @$excelDatum['简介'];
+                        }
+
+                        if ((int) @$excelDatum['完成']) {
+                            $work->is_complete = (int) @$excelDatum['完成'];
+                        }
+
                         @$work->save();
 
                     }
