@@ -30,6 +30,9 @@ class MustOnAdmin
 
         }
 
+        /**
+         * sadasdas
+         */
         return Tools::notifyTo('请登录','admin.login');
     }
 }
