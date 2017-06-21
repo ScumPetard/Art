@@ -20,7 +20,7 @@ class MustOnAdmin
     {
         $routeName = $request->route()->getName();
         if (Auth::check() && Auth::user()->is_admin == 1) {
-            if (Auth::user()->can($routeName) || true) {
+            if (Auth::user()->can($routeName)) {
                 return $next($request);
             }
             return view('admin.layouts.stop');
