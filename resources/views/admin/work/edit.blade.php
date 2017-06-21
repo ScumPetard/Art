@@ -87,7 +87,7 @@
                             <label>简介</label>
                             <textarea name="intro" cols="30" rows="3"
                                       class="form-control"
-                                      >translatable{{ $work->intro or '' }}</textarea>
+                                      >{{ $work->intro or '' }}</textarea>
                         </div>
                         <div class="form-group">
                             <div class="radio radio-inline">
