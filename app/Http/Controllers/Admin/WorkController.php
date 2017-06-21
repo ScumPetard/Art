@@ -289,7 +289,8 @@ class WorkController extends Controller
             $excel = $request->file('excel');
             $filePath = $excel->getRealPath();
             Excel::load($filePath, function($reader) {
-                $excelData = $reader->all();
+                $excelData = $reader->all()->toArray();
+                $excelData = $excelData[0];
                 foreach ($excelData as $excelDatum) {
                     $work = Work::find((int) $excelDatum['作品']);
                     if ($work) {
