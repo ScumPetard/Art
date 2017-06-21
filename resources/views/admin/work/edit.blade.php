@@ -28,30 +28,29 @@
                             <select name="author_id" class="form-control" id="createauhtor">
                                 <option >未选择</option>
                                 @foreach($authors as $author)
-                                    <option value="{{ $author->id }}"
-                                            {{ $author->id == $work->author_id ? 'selected' : '' }} worktype_id="{{ $author->worktype_id }}">{{ $author->china_name }}</option>
+                                    <option value="{{ $author->id }}" {{ $author->id == $work->author_id ? 'selected' : '' }} worktype_id="{{ $author->worktype_id }}">{{ $author->china_name }}</option>
                                 @endforeach
                             </select>
                         </div>
                         <div class="form-group">
                             <label>国家</label>
                             <input type="text" class="form-control" maxlength="12" name="countries"
-                                   value="{{ $work->countries or '' }}">
+                                   value="{{ $work->countries }}">
                         </div>
                         <div class="form-group">
                             <label>创作时间</label>
                             <input type="date" class="form-control" name="creation_time"
-                                   value="{{ $work->creation_time or '' }}">
+                                   value="{{ $work->creation_time }}">
                         </div>
                         <div class="form-group">
                             <label>材质</label>
                             <input type="text" class="form-control" maxlength="12" name="material"
-                                   value="{{ $work->material or '' }}">
+                                   value="{{ $work->material }}">
                         </div>
                         <div class=" form-group">
                             <label>大小</label>
                             <input type="text" class="form-control" maxlength="12" name="size"
-                                   value="{{ $work->size or '' }}">
+                                   value="{{ $work->size }}">
                         </div>
                         <div class=" form-group">
                             <label>作品类型</label>
@@ -71,12 +70,12 @@
                         <div class="form-group">
                             <label>创作地点</label>
                             <input type="text" class="form-control" maxlength="12" name="creating_location"
-                                   value="{{ $work->creating_location or '' }}">
+                                   value="{{ $work->creating_location }}">
                         </div>
                         <div class="form-group">
                             <label>收藏地址</label>
                             <input type="text" class="form-control" maxlength="12" name="collection_location"
-                                   value="{{ $work->collection_location or '' }}">
+                                   value="{{ $work->collection_location }}">
                         </div>
                         <div class="form-group">
                             <label>高清图 ( 图片大小 874x640 )</label>
@@ -87,7 +86,7 @@
                             <label>简介</label>
                             <textarea name="intro" cols="30" rows="3"
                                       class="form-control"
-                                      >{{ $work->intro or '' }}</textarea>
+                                      >{{ $work->intro }}</textarea>
                         </div>
                         <div class="form-group">
                             <div class="radio radio-inline">

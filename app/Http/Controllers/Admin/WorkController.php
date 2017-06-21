@@ -290,8 +290,11 @@ class WorkController extends Controller
             $filePath = $excel->getRealPath();
             Excel::load($filePath, function($reader) {
                 $excelData = $reader->all();
+//                dd($excelData);
                 foreach ($excelData as $excelDatum) {
                     $work = Work::find((int) $excelDatum['作品']);
+                    dd($work);
+//                    $work = Work::find(47);
                     if ($work) {
                         $workdate =  @explode('-',@$excelDatum['作品分类时期']);
                         @WorkAndWorkDate::where('work_id', $work->id)->delete();
@@ -342,7 +345,9 @@ class WorkController extends Controller
                             $work->is_complete = (int) @$excelDatum['完成'];
                         }
 
-                        @$work->save();
+
+                        $work->save();
+//                        dd($work->save());
 
                     }
                 }
