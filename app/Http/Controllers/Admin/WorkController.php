@@ -293,7 +293,7 @@ class WorkController extends Controller
 //                dd($excelData);
                 foreach ($excelData as $excelDatum) {
                     $work = Work::find((int) $excelDatum['作品']);
-                    dd($work);
+                    dd((int) $excelDatum['作品']);
 //                    $work = Work::find(47);
                     if ($work) {
                         $workdate =  @explode('-',@$excelDatum['作品分类时期']);
