@@ -30,7 +30,7 @@ class MemberController extends Controller
      */
     public function sign(Request $request)
     {
-        dd(bcrypt('admin'));
+//        dd(bcrypt('admin'));
        try {
 
             /** Get 请求 */
