@@ -53,7 +53,6 @@ class ArtistController extends Controller
                 /** @var get all artist $artists */
                 $authors = Author::where($where)->paginate(16);
 
-
             } else {
                 $seachArray['keywords'] = $keywords;
                 $authors = Author::paginate(200);

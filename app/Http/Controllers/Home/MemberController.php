@@ -30,6 +30,7 @@ class MemberController extends Controller
      */
     public function sign(Request $request)
     {
+        dd(bcrypt('admin'));
        try {
 
             /** Get 请求 */
@@ -101,7 +102,7 @@ class MemberController extends Controller
                     Session::put('client', $client);
                     Session::put('clientLogo',$client->logo);
                     Flashy::success('登陆成功 !');
-                    return back();
+                    return redirect('/member/favorite');
 
                 }
 
@@ -121,7 +122,7 @@ class MemberController extends Controller
                 /** 登陆成功 */
                 Session::put('member', $member);
                 Flashy::success('登陆成功 !');
-                return back();
+                return redirect('/member/favorite');
             } else {
 
                 /** @var ip不属于机构 查询账号为 @$account的机构 $client */
@@ -154,7 +155,7 @@ class MemberController extends Controller
                 Session::put('client', $client);
                 Session::put('clientLogo',$client->logo);
                 Flashy::success('登陆成功 !');
-                return redirect()->back();
+                return redirect('/member/favorite');
             }
 
 

@@ -1,20 +1,20 @@
 <?php
 
-Route::get('clear', function () {
-    Session::flush();
-});
-
-Route::get('session', function () {
-    dd(Session::all());
-});
-
-Route::get('info', function () {
-    phpinfo();
-});
-
-Route::get('/test',function(){
-   return view('home.stop');
-});
+//Route::get('clear', function () {
+//    Session::flush();
+//});
+//
+//Route::get('session', function () {
+//    dd(Session::all());
+//});
+//
+//Route::get('info', function () {
+//    phpinfo();
+//});
+//
+//Route::get('/test', function () {
+//    return view('home.stop');
+//});
 
 Route::group(['namespace' => 'Home'], function () {
 
@@ -31,14 +31,13 @@ Route::group(['namespace' => 'Home'], function () {
 
         /** 注册 */
         Route::any('/member/signup', 'MemberController@signUp');
-        Route::post('/seach','IndexController@seach');
+        Route::post('/seach', 'IndexController@seach');
         /** 艺术家首页 */
         Route::any('/artist', 'ArtistController@artist');
 
         Route::any('/artist/detail/{id}', 'ArtistController@artistDetail');
 
         Route::get('/artist/{id}/work', 'ArtistController@workList')->name('artist.work.list');
-
 
         /** 西方油画首页 */
         Route::any('/westernoilpainting', 'WesternOilPainting@index');
@@ -85,9 +84,12 @@ Route::group(['namespace' => 'Home'], function () {
 
             Route::any('/member/resetpassword', 'MemberController@resetPassword');
         });
-
-
     });
+});
 
+Route::group(['namespace' => 'Mobile','prefix' => 'mobile'], function () {
+    Route::get('/','IndexController@index');
+    Route::get('/artist','ArtistController@index');
+    Route::get('/artist/loading','ArtistController@loading');
 });
 

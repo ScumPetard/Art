@@ -85,8 +85,7 @@
                         <div class="form-group">
                             <label>简介</label>
                             <textarea name="intro" cols="30" rows="3"
-                                      class="form-control"
-                                      >{{ $work->intro }}</textarea>
+                                      class="form-control">{{ $work->intro }}</textarea>
                         </div>
                         <div class="form-group">
                             <div class="radio radio-inline">
