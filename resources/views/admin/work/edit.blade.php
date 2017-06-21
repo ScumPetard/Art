@@ -158,7 +158,6 @@
             $('#createauhtor>option').each(function () {
                 if ($(this).attr('worktype_id') == dataType) {
                     $(this).show();
-                    $('#createauhtor').val($(this).val());
                 }
                 else {
                     $(this).hide();

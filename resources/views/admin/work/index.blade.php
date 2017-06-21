@@ -32,6 +32,7 @@
                             <th>ID</th>
                             <th>略缩图</th>
                             <th>文件名称</th>
+                            <th>作品名称</th>
                             <th>状态</th>
                             <th>作品类型</th>
                             <th>作品时期</th>
@@ -53,6 +54,7 @@
                                 </td>
                                 <td><img src="{{ $work->small_image }}" class="img-thumbnail"></td>
                                 <td>{{ $work->file_name }}</td>
+                                <td>{{ $work->work_name }}</td>
                                 <td>
                                     <span class="label label-{{ $work->is_complete == 0 ? 'danger' : 'info' }}">{{ $work->is_complete == 0 ? '未完成' : '已完成' }}</span>
                                 </td>

@@ -53,7 +53,7 @@ class ServiceController extends Controller
                 /** 检查是否超过下载次数 */
                 if ($count >= $downloadCount) {
                     Flashy::error('下载数量超过限制 !');
-                    return redirect('/');
+                    return back();
                 }
 
                 /** 创建下载记录 */
@@ -78,7 +78,7 @@ class ServiceController extends Controller
                 /** 检查是否超过下载次数 */
                 if ($count >= $downloadCount) {
                     Flashy::error('下载数量超过限制 !');
-                    return redirect('/');
+                    return back();
                 }
 
                 /** 创建下载记录 */
